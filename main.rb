@@ -20,6 +20,8 @@ Sunlight::Base.api_key = 'e9f3c1270bd24c6980e3408a7179ba12'
 # binding.pry
 
 get '/' do
+  # access database to display favorites
+  # add party colors
   erb :index
 end
 

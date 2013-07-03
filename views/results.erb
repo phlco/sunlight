@@ -5,9 +5,10 @@
     <% @legislators.each do |person| %>
       <ul>
         <form action="/fav" method="POST">
-          <input type="hidden" name="firstname" value="<%= person.firstname %>">
+          <input type="hidden" name="bioguide_id=" value="<%= person.bioguide_id %>">
           <!-- send unique id to /fav -->
         <button class="btn"><%= person.firstname %> <%= person.lastname %></button>
+        <!-- add party color -->
         </form>
 
       </ul>
