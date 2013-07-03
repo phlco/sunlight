@@ -15,13 +15,18 @@ set :database, {
 }
 
 Dotenv.load
-Sunlight::Base.api_key = ENV['SUNLIGHT_API_KEY']
+Sunlight::Base.api_key = 'd1ec724a9b6c4328bc9ba78ac386cc6d'
 
-# class Legislator << ActiveRecord::Base
-# end
+class Legislator < ActiveRecord::Base
+end
 
 get '/' do
   @legislators = Legislator.all
 
   erb :index
+end
+
+post '/legislator_search' do
+  @result_legislators = Sunlight::Legislator.all_in_zipcode("#{params[:zip]}")
+  erb :legislator_search
 end
