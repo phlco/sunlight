@@ -1,0 +1,13 @@
+<div class="row-fluid">
+  <% @results.each do |result| %>
+  <div class="span3">
+    <h4><%= result.firstname %> <%= result.lastname %></h4>
+    <%= result.party %>
+    <%= result.phone %>
+    <%= result.state %>
+    <%= result.twitter_id %>
+    <%= result.in_office %>
+    <%= result.votesmart_id %>
+  </div>
+  <% end %>
+</div>
