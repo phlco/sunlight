@@ -1,0 +1,12 @@
+index
+-input zip to search
+list favorites
+
+search results show legislators with check boxes
+Republican legislators should be red.
+Democratic legislators should be blue.
+Independents are purple
+checked boxes save to favorites
+redirects to index
+
+Favorited legislators should have firstname and lastname, party, phone, state, twitter_id, and in_office, votesmart_id in the database
