@@ -32,9 +32,10 @@ get '/legislators' do
 end
 
 post '/favorite/:votesmart_id' do 
-	l = Sunlight::Legislator.search_by_votesmart_id(params[:votesmart_id])
+	l = Sunlight::Legislator.all_where(:votesmart_id => "#{params[:votesmart_id]}").first
+	binding.pry
 	Legislator.create(firstname: l.firstname, lastname: l.lastname, party: l.party,
 		state: l.state, twitter_id: l.twitter_id, in_office: l.in_office, 
 		votesmart_id: l.votesmart_id)
-	
+
 end
