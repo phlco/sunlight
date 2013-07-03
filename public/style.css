@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Oxygen:300);
+@import url(http://fonts.googleapis.com/css?family=Arvo:400italic);
+@import url(http://fonts.googleapis.com/css?family=Fauna+One);
+
+body {
+  margin: 0 auto;
+  background-color: #F2F2F2;
+  font-family: "Oxygen";
+  color: #151515;
+}
+h1 {
+  color: #EFFBF2;
+  text-shadow: 3px 10px 3px #2E2E2E;
+  text-align: center;
+  letter-spacing: 2.45px;
+}
+a {
+  text-decoration: none;
+}
+.search_container {
+  text-align: center;
+  display: block;
+  padding: 50px;
+  font-family: "Fauna One";
+  font-size: 30px;
+  letter-spacing: 2px;
+}
