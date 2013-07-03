@@ -1,0 +1,17 @@
+<! @lastname, @party, @phone, @state, @twitter_id, @in_office, @votesmart_id >
+
+<% @congresspeople.each do |person| %>
+  <%= person.firstname %> <%= person.lastname %>
+  <ul>
+    <li>Party: <%= person.party %></li>
+    <li>Phone: <%= person.phone %></li>
+    <li>State: <%= person.state %></li>
+    <li>Twitter Handle: <%= person.twitter_id %></li>
+    <li>In Office? <% if person.in_office %>
+                      Yes
+                   <% else %>
+                      No
+                   <% end %></li>
+    <li>VoteSmart ID: <%= person.votesmart_id %></li>
+  </ul>
+<% end %>
