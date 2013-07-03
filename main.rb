@@ -30,3 +30,11 @@ get '/legislators' do
 	@legislators = Sunlight::Legislator.all_in_zipcode(params[:zip])
 	erb :legislators
 end
+
+post '/favorite/:votesmart_id' do 
+	l = Sunlight::Legislator.search_by_votesmart_id(params[:votesmart_id])
+	Legislator.create(firstname: l.firstname, lastname: l.lastname, party: l.party,
+		state: l.state, twitter_id: l.twitter_id, in_office: l.in_office, 
+		votesmart_id: l.votesmart_id)
+	
+end

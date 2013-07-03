@@ -13,8 +13,8 @@
 
 			<%=legislator.firstname%> <%=legislator.lastname%>
 		</h3>
-		<form action = 'favorite/:name' method = 'post'>
-			<button> Favorite </button>
+		<form action = 'favorite/:votesmart_id' method = 'post'>
+			<button value = "<%=legislator.votesmart_id%>"> Favorite </button>
 		</form>
 	<%end%>
 </ul>
