@@ -21,10 +21,12 @@ get '/' do
 
 end
 
-get '/index' 
+get '/index' do
+	@favorites = Legislator.all
 	erb :index
 end
 
-get '/legislators'
-	
+get '/legislators' do
+	@legislators = Sunlight::Legislator.find_by_zipcode(params[:zip])
+	erb :legeslators
 end
