@@ -15,3 +15,4 @@ class LegislatorTable < ActiveRecord::Migration
   	drop_table legislators
   end
 end
+

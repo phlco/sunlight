@@ -13,3 +13,14 @@ set :database, {
 	database: 'sulight',
 	host: 'localhost'
 }
+
+class Legislator < ActiveRecord::Base
+end
+
+get '/' do 
+
+end
+
+get '/index' 
+	erb :index
+end
