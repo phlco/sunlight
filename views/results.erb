@@ -1,0 +1,16 @@
+<div class="row-fluid">
+  <div class="span4">
+    <h2>Legislators</h2>
+    <p>zip code <%= @zip %></p>
+    <% @legislators.each do |person| %>
+      <ul>
+        <form action="/fav" method="POST">
+          <input type="hidden" name="firstname" value="<%= person.firstname %>">
+          <!-- send unique id to /fav -->
+        <button class="btn"><%= person.firstname %> <%= person.lastname %></button>
+        </form>
+
+      </ul>
+    <% end %>
+  </div>
+</div>
