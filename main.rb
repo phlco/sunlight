@@ -24,3 +24,7 @@ end
 get '/index' 
 	erb :index
 end
+
+get '/legislators'
+	
+end
