@@ -27,6 +27,6 @@ get '/index' do
 end
 
 get '/legislators' do
-	@legislators = Sunlight::Legislator.find_by_zipcode(params[:zip])
-	erb :legeslators
+	@legislators = Sunlight::Legislator.all_in_zipcode(params[:zip])
+	erb :legislators
 end
