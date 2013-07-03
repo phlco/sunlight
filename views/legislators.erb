@@ -1,8 +1,20 @@
 <ul>
 	<%@legislators.each do |legislator|%>
-		<h3><%=legislator.firstname%> <%=legislator.lastname%></h3>
-		<form action = 'favorite/:name'>
-			<button></button>
+		<h1><%=legislator.party%></h1>
+		<%party = legislator.party%>
+		<%coloring = ""%>
+		<% if party == "R" %>
+			<% coloring = 'red' %>
+		<% elsif party == "D" %>
+			<% coloring = 'blue' %>
+		<% end %> 
+
+		<h3 style = "color: <%=coloring%>">
+
+			<%=legislator.firstname%> <%=legislator.lastname%>
+		</h3>
+		<form action = 'favorite/:name' method = 'post'>
+			<button> Favorite </button>
 		</form>
 	<%end%>
 </ul>
