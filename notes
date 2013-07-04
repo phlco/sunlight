@@ -15,3 +15,32 @@ create database
 rake db:create_migration NAME=create_favorites
 Favorited legislators should have firstname and lastname, party, phone, state, twitter_id, and in_office, votesmart_id in the database
 
+[#<Sunlight::Legislator:0x007fe922db25c8
+0  @bioguide_id="L000551",
+1  @birthdate=1946-07-16 00:00:00 -0400,
+2  @congress_office="2267 Rayburn House Office Building",
+3  @congresspedia_url="http://www.opencongress.org/wiki/Barbara_Lee",
+4  @crp_id="N00008046",
+5  @district="13",
+6  @email="",
+7  @facebook_id="RepBarbaraLee",
+8  @fax="202-225-9817",
+9  @fec_id="H8CA09060",
+10  @firstname="Barbara",
+11  @gender="F",
+12  @govtrack_id="400237",
+13  @in_office=true,
+14  @lastname="Lee",
+15  @middlename="J.",
+16  @name_suffix="",
+17  @nickname="",
+18  @party="D",
+19  @phone="202-225-2661",
+20  @senate_class="",
+21  @state="CA",
+22  @title="Rep",
+23  @twitter_id="repbarbaralee",
+24  @votesmart_id="8315",
+25  @webform="http://lee.house.gov/?sectionid=44&sectiontree=18,44",
+26  @website="http://lee.house.gov",
+27  @youtube_url="http://youtube.com/RepLee">]
