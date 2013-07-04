@@ -35,6 +35,8 @@ get '/legislators/:zipcode' do
   erb :legislators
 end
 
-post '/legislators/:zipcode' do
-
+get '/legislators/:zipcode/:bioguide_id' do
+  bioguide_id = params[:bioguide_id]
+  @legislator = Sunlight::Legislator.all_where(:bioguide_id => bioguide_id).first
+  erb :legislator
 end

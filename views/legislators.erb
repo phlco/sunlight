@@ -3,35 +3,11 @@
 <ul>
   <% @legislators.each do |legislator| %>
     <li>
-      <h3><%= "#{legislator.firstname} #{legislator.lastname}" %></h3>
-        <ul>
-          <li>Party:  <% if legislator.party == "D" %>
-                        Democratic Party
-                      <% elsif legislator.party == "R" %>
-                        Republican Party
-                      <% else %>
-                        Independent
-                      <% end %>
-          </li>
-          <li>Phone: <%= legislator.phone %></li>
-          <li>State: <%= legislator.state %></li>
-          <li>Twitter:  <% unless legislator.twitter_id == "" %>
-                          @<%= legislator.twitter_id %>
-                        <% else %>
-                          n/a
-                        <% end %>
-          </li>
-          <li>In Office:  <% if legislator.in_office = true %>
-                            Yes
-                          <% else %>
-                            No
-                          <% end %>
-          </li>
-          <li>Votesmart Id: <%= legislator.votesmart_id %></li>
-        </ul>
-    </li><br/>
-    <form action="/legislators/:zipcode" method="post">
-      <button>Add to Favorites</button>
-    </form>
+      <h3>
+        <a href="/legislators/<%= @zipcode %>/<%= legislator.bioguide_id %>">
+          <%= "#{legislator.title}. #{legislator.firstname} #{legislator.lastname}" %>
+        </a>
+      </h3>
+    </li>
   <% end %>
 </ul>
