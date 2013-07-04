@@ -21,16 +21,16 @@ get '/' do
 end
 
 # This should send a post request to the url
-# search_result will point to an array
 post '/' do
   zipcode = params[:zipcode]
-  redirect to "/search_results/#{zipcode}"
+  redirect to "/legislators/#{zipcode}"
 end
 binding.pry
 
 # This should display all results of the zipcode search
-get '/search_results/:zipcode' do
+# @legislators will point to an array of objects
+get '/legislators/:zipcode' do
   @zipcode = params[:zipcode]
-  @search_results = Sunlight::Legislator.all_in_zipcode(@zipcode)
-  erb :search_results
+  @legislators = Sunlight::Legislator.all_in_zipcode(@zipcode)
+  erb :legislators
 end
