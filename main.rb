@@ -20,9 +20,17 @@ get '/' do
  erb :index
 end
 
+# This should send a post request to the url
+# search_result will point to an array
 post '/' do
-  zip = params[:zip]
-  legislator = Sunlight::Legislator.all_in_zipcode(zip)
-  redirect to('/search_results')
+  zipcode = params[:zipcode]
+  redirect to "/search_results/#{zipcode}"
 end
+binding.pry
 
+# This should display all results of the zipcode search
+get '/search_results/:zipcode' do
+  @zipcode = params[:zipcode]
+  @search_results = Sunlight::Legislator.all_in_zipcode(@zipcode)
+  erb :search_results
+end
