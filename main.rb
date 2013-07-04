@@ -40,3 +40,7 @@ get '/legislators/:zipcode/:bioguide_id' do
   @legislator = Sunlight::Legislator.all_where(:bioguide_id => bioguide_id).first
   erb :legislator
 end
+
+post '/legislators/:zipcode/:bioguide_id' do
+  redirect to "/"
+end
