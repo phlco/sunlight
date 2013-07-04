@@ -16,10 +16,16 @@
           <input type="hidden" name="in_office" value="<%= person.in_office %>">
           <input type="hidden" name="votesmart_id" value="<%= person.votesmart_id %>">
 
+        <% if person.party == "D" %>
+          <button class="btn-primary" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+          <% elsif if person.party == "R" %>
+            <button class="btn-danger" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+            <% else %>
+            <button class="btn-success" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+          <% end %>
 
-          <!-- send unique id to /fav -->
-        <button class="btn" width="150px"><%= person.firstname %> <%= person.lastname %></button>
-        <!-- add party color -->
+        <% end %>
+
         </form>
 
       </ul>
