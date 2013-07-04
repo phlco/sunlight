@@ -31,8 +31,8 @@ get '/legislators' do
 	erb :legislators
 end
 
-post '/favorite/:votesmart_id' do 
-	l = Sunlight::Legislator.all_where(:votesmart_id => "#{params[:votesmart_id]}").first
+post '/favorite' do 
+	l = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id].to_i).first
 	binding.pry
 	Legislator.create(firstname: l.firstname, lastname: l.lastname, party: l.party,
 		state: l.state, twitter_id: l.twitter_id, in_office: l.in_office, 

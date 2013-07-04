@@ -1,7 +1,5 @@
 <ul>
 	<%@legislators.each do |legislator|%>
-		<%=legislator.votesmart_id%>
-		<h1><%=legislator.party%></h1>
 		<%party = legislator.party%>
 		<%coloring = ""%>
 		<% if party == "R" %>
@@ -14,8 +12,9 @@
 
 			<%=legislator.firstname%> <%=legislator.lastname%>
 		</h3>
-		<form action = 'favorite/:votesmart_id' method = 'post'>
-			<button value = "<%=legislator.votesmart_id%>" name = "votesmart_id"> Favorite </button>
+		<form action = '/favorite' method = 'post'>
+			<input value =  "<%=legislator.votesmart_id%>" name = "votesmart_id" type = "hidden">
+			<button> Favorite </button>
 		</form>
 	<%end%>
 </ul>
