@@ -1,0 +1,25 @@
+<form action='/favorited' method="POST">
+  <% @members_of_congress.each do |member| %>
+    <% serialized = member.to_yaml %>
+    <% if member.party == "D" %>
+      <div style="background-color: blue">
+    <% elsif member.party == "R" %>
+      <div style="background-color: red">
+    <% else %>
+      <div style="background-color: purple">
+    <% end %>
+    Name: <%= member.firstname %> <%= member.lastname %></br>
+    Party: <%= member.party %></br>
+    Phone: <%= member.phone %></br>
+    State: <%= member.state %></br>
+    Twitter ID: <%= member.twitter_id %></br>
+    In Office: <%= member.in_office %></br>
+    Vote Smart ID: <%= member.votesmart_id %></br>
+    Favorite? <input type="radio" name="favorited" value="<%=serialized%>">
+    </br>
+    </div>
+  <% end %>
+  <button>SUBMIT</button>
+</form>
+
+<p><a href="/">INDEX</a><p>
