@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+
+.zipbox {
+  font-family: serif;
+}
+
+h1, h2 {
+  color: rgb(16, 78, 139);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(16,78,139);
+}
+
+div {
+  padding: 20px;
+  margin: 20px;
+}
