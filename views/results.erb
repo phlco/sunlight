@@ -1,0 +1,22 @@
+<% @results.each do |result| %>
+  <div class="span3">
+    <% if result.party == 'D' %>
+      <%= "<div class='blue'>" %>
+    <% elsif result.party == 'R' %>
+      <%= "<div class='red'>" %>
+    <% else %>
+      <%= "<div class='purple'>" %>
+    <% end %>
+      <h4><%= result.firstname %> <%= result.lastname %></h4>
+      <p><span class="label">Party:</span> <%= result.party %></p>
+      <p><span class="label">Phone:</span> <%= result.phone %></p>
+      <p><span class="label">State:</span> <%= result.state %></p>
+      <p><span class="label">Twitter:</span> <%= result.twitter_id %></p>
+      <p><span class="label">In Office:</span> <% if result.in_office == true %><%= "Yes" %><% else %><%= "No" %><% end %></p>
+      <p><span class="label">VoteSmart ID:</span> <%= result.votesmart_id %></p>
+    </div>
+      <form action ="/legislator/<%= result.phone %>" method="post">
+        <button class="btn btn-warning btn-small">Save to Favorite</button>
+      </form>
+  </div>
+<% end %>
