@@ -36,17 +36,17 @@ get '/results' do
 end
 
 post '/fav' do
-  favorite = Favorites.find(params[:id])
   @bioguide_id = params[:bioguide_id]
-  favorite = Sunlight::Legislator.all_where(:bioguide_id => "@bioguide_id")
-  favorite[10] = params[:firstname]
-  favorite[14] = params[:lastname]
-  favorite[18] = params[:party]
-  favorite[19] = params[:phone]
-  favorite[21] = params[:state]
-  favorite[22] = params[:twitter_id]
-  favorite[13] = params[:in_office]
-  favorite[24] = params[:votesmart_id]
+  @firstname = params[:firstname]
+  @lastname = params[:lastname]
+  @party = params[:party]
+  @phone = params[:phone]
+  @state = params[:state]
+  @twitter_id = params[:twitter_id]
+  @in_office = params[:in_office]
+  @votesmart_id = params[:votesmart_id]
+
+  @favorite = Favorites.create(params)
   # get unique id from results.erb
   # new api call using unique id
   # send info to database

@@ -6,7 +6,17 @@
     <% @legislators.each do |person| %>
       <ul>
         <form action="/fav" method="POST">
-          <input type="hidden" name="bioguide_id=" value="<%= person.bioguide_id %>">
+          <input type="hidden" name="bioguide_id" value="<%= person.bioguide_id %>">
+          <input type="hidden" name="firstname" value="<%= person.firstname %>">
+          <input type="hidden" name="lastname" value="<%= person.lastname %>">
+          <input type="hidden" name="party" value="<%= person.party %>">
+          <input type="hidden" name="phone" value="<%= person.phone %>">
+          <input type="hidden" name="state" value="<%= person.state %>">
+          <input type="hidden" name="twitter_id" value="<%= person.twitter_id %>">
+          <input type="hidden" name="in_office" value="<%= person.in_office %>">
+          <input type="hidden" name="votesmart_id" value="<%= person.votesmart_id %>">
+
+
           <!-- send unique id to /fav -->
         <button class="btn" width="150px"><%= person.firstname %> <%= person.lastname %></button>
         <!-- add party color -->

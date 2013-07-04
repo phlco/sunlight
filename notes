@@ -1,3 +1,26 @@
+class CreateFavorites < ActiveRecord::Migration
+  def up
+      create_table :favorites do |t|
+      t.string :bioguide_id
+      t.string :firstname
+      t.string :lastname
+      t.string :party
+      t.string :phone
+      t.string :state
+      t.string :twitter_id
+      t.string :in_office
+      t.string :votesmart_id
+
+      t.timestamps
+    end
+  end
+
+  def down
+    drop_table :favorites
+  end
+end
+
+
 index
 -input zip to search
 list favorites
@@ -44,3 +67,24 @@ Favorited legislators should have firstname and lastname, party, phone, state, t
 25  @webform="http://lee.house.gov/?sectionid=44&sectiontree=18,44",
 26  @website="http://lee.house.gov",
 27  @youtube_url="http://youtube.com/RepLee">]
+
+
+
+
+  favorite[10] = params[:firstname]
+  favorite[14] = params[:lastname]
+  favorite[18] = params[:party]
+  favorite[19] = params[:phone]
+  favorite[21] = params[:state]
+  favorite[22] = params[:twitter_id]
+  favorite[13] = params[:in_office]
+  favorite[24] = params[:votesmart_id]
+
+    fav.firstname = params[:favorite[10]]
+  fav.lastname = params[:favorite[14]]
+  fav.party = params[:favorite[18]]
+  fav.phone = params[:favorite[19]]
+  fav.state = params[:favorite[21]]
+  fav.twitter_id = params[:favorite[22]]
+  fav.in_office = params[:favorite[13]]
+  fav.votesmart_id = params[:favorite[24]]

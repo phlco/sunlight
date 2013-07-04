@@ -16,9 +16,14 @@
 <div class="row-fluid">
   <div class="span12">
     <h2>Favorite Legislators</h2>
-    <p>results here please </p>
 
-    <p><a class="btn" href="#">View details &raquo;</a></p>
+    <% @favorites.each do |favorite| %>
+      <li>
+          <%= favorite['firstname'] %> <%= favorite['lastname'] %>
+        </a>
+      </li>
+    <% end %>
+
   </div>
 
 </div>
