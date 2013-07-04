@@ -25,7 +25,7 @@ post '/' do
   zipcode = params[:zipcode]
   redirect to "/legislators/#{zipcode}"
 end
-binding.pry
+# binding.pry
 
 # This should display all results of the zipcode search
 # @legislators will point to an array of objects
