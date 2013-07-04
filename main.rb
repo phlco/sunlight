@@ -27,6 +27,11 @@ post '/' do
   redirect to("/#{@zipcode}")
 end
 
+get '/fav' do
+  @fav = Legislator.all
+  erb :fav
+end
+
 get '/:zipcode' do
   code = params[:zipcode]
   @results = Sunlight::Legislator.all_in_zipcode(code)
@@ -45,5 +50,5 @@ post '/legislator/:phone' do
   in_office = fav_legislator[0].in_office
 
   leg = Legislator.create(firstname: firstname, lastname: lastname, party: party, phone: phone, state: state, twitter_id: twitter_id, in_office: in_office, votesmart_id: votesmart_id)
-  redirect to("/")
+  redirect to("/fav")
 end

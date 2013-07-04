@@ -1,0 +1,32 @@
+<div class="span12">
+  <div class="row-fluid title">
+    <div class="span2">Name</div>
+    <div class="span2">Party</div>
+    <div class="span2">Phone</div>
+    <div class="span1">State</div>
+    <div class="span2">Twitter</div>
+    <div class="span1">Office?</div>
+    <div class="span1">VoteSmart</div>
+    <div class="span1"></div>
+  </div>
+  <% @fav.each do |leg| %>
+    <div class="row-fluid">
+      <div class="span2"><%= leg['firstname'] %> <%= leg['lastname'] %></div>
+      <div class="span2">
+        <% if leg['party'] == 'R' %>
+          <%= "Republican" %>
+        <% elsif leg['party'] == 'D' %>
+          <%= "Democratic" %>
+        <% else %>
+          <%= "Independent" %>
+        <% end %>
+      </div>
+      <div class="span2"><%= leg['phone'] %></div>
+      <div class="span1"><%= leg['state'] %></div>
+      <div class="span2"><%= leg['twitter_id'] %></div>
+      <div class="span1"><%= leg['in_office'] %></div>
+      <div class="span1"><%= leg['votesmart_id'] %></div>
+      <div class="span1"><button class="btn btn-warning btn-mini">Delete</button></div>
+    </div>
+  <% end %>
+</div>
