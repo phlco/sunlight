@@ -34,3 +34,7 @@ get '/legislators/:zipcode' do
   @legislators = Sunlight::Legislator.all_in_zipcode(@zipcode)
   erb :legislators
 end
+
+post '/legislators/:zipcode' do
+
+end

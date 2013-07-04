@@ -29,6 +29,9 @@
           </li>
           <li>Votesmart Id: <%= legislator.votesmart_id %></li>
         </ul>
-    </li>
+    </li><br/>
+    <form action="/legislators/:zipcode" method="post">
+      <button>Add to Favorites</button>
+    </form>
   <% end %>
 </ul>
