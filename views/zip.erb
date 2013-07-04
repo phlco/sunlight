@@ -1,0 +1,39 @@
+<h1>Congressional members for ZIP Code <%= @zip %></h1>
+
+<% @congresspeople.each do |person| %>
+  <% if person.party == "R" %>
+    <% color = "red" %>
+  <% elsif person.party == "D" %>
+    <% color = "blue" %>
+  <% else %>
+    <% color = "purple" %>
+  <% end %>
+  <div class="<%= color %>">
+    <%= person.firstname %> <%= person.lastname %>
+    <ul>
+      <li>Party: <%= person.party %></li>
+      <li>Phone: <%= person.phone %></li>
+      <li>State: <%= person.state %></li>
+      <li>Twitter Handle: <%= person.twitter_id %></li>
+      <li>In Office? <% if person.in_office %>
+                        Yes
+                     <% else %>
+                        No
+                     <% end %></li>
+      <li>VoteSmart ID: <%= person.votesmart_id %></li>
+    </ul>
+  <form action="/add_to_favorites" method="post">
+    <input type='hidden' name="firstname" value="<%= person.firstname %>">
+    <input type='hidden' name="lastname" value="<%= person.lastname %>">
+    <input type='hidden' name="party" value="<%= person.party %>">
+    <input type='hidden' name="phone" value="<%= person.phone %>">
+    <input type='hidden' name="state" value="<%= person.state %>">
+    <input type='hidden' name="twitter_id" value="<%= person.twitter_id %>">
+    <input type='hidden' name="in_office" value="<%= person.in_office %>">
+    <input type='hidden' name="votesmart_id" value="<%= person.votesmart_id %>">
+    <button>Add to favorites</button>
+  </form>
+  <br>
+  </div>
+<% end %>
+

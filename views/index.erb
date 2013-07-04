@@ -1,0 +1,22 @@
+<h1>Welcome to Congression!</h1>
+
+<form action="/" method="post">
+  <label for="zip">Enter ZIP Code</label><br>
+  <input type="text" name="zip"><br>
+  <button>See Legislators</button>
+</form>
+
+<h3>Favorited Legislators</h3>
+<ul>
+  <% @favorites.each do |person| %>
+  <% if person.party == "R" %>
+    <% color = "red" %>
+  <% elsif person.party == "D" %>
+    <% color = "blue" %>
+  <% else %>
+    <% color = "purple" %>
+  <% end %>
+  <li class="<%= color %>">
+    <%= person.firstname %> <%= person.lastname %></li>
+  <% end %>
+</ul>
