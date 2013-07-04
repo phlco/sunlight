@@ -17,6 +17,16 @@ set :database, {
 class Legislator < ActiveRecord::Base
 end
 
+helpers do
+	def in_database?(phone)
+		unless Legislator.find_all_by_phone(phone).first
+			false
+		else
+			true
+		end
+	end
+end
+
 get '/' do 
 
 end
@@ -32,10 +42,11 @@ get '/legislators' do
 end
 
 post '/favorite' do 
-	l = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id].to_i).first
-	binding.pry
-	Legislator.create(firstname: l.firstname, lastname: l.lastname, party: l.party,
+	l = Sunlight::Legislator.all_where(:phone => params[:phone]).first 
+	unless in_database? params[:phone]
+		Legislator.create(firstname: l.firstname, lastname: l.lastname, party: l.party,
 		state: l.state, twitter_id: l.twitter_id, in_office: l.in_office, 
 		votesmart_id: l.votesmart_id)
-
+	end
+	redirect to('/index')
 end

@@ -3,8 +3,8 @@
 	<input type = "text" name = "zip" placeholder = "zip">
 	<button> Find Legislators </button>
 </form>
-<%if @legislators%>
-	<%@legislators.each do |legislator| %>
-		<%=@legislator.firstname%>
+<%if @favorites then%>
+	<%@favorites.each do |legislator| %>
+		<p><%=legislator.firstname%><p>
 	<%end%>
 <%end%>
