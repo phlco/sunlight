@@ -1,0 +1,17 @@
+<h1>All congresspeople in zipcode <%= @zipcode %></h1>
+
+<ul>
+  <% @congresspeople.each do |person| %>
+  <li><%= person.firstname %> <%= person.lastname %>
+      <ul>
+        <li><%= person.party %></li>
+      </ul>
+  </li>
+  <form action="/favs/new">
+    <input type='hidden' value=<%= person.votesmart_id %> name="votesmart_id">
+  <button>Add to favorites</button>
+  </form>
+  </br>
+    <% end %>
+</ul>
+
