@@ -15,16 +15,15 @@
         </header>
         <ul class="breadcrumb">
           <li><a href="/">Home</a> <span class="divider">/</span></li>
-
+          <li><a href="/favorites">Favorites</a></li>
           <li class="pull-right"><a href="" class="btn btn-info btn-mini">TBU</a></li>
           <li class="pull-right"><a href="" class="btn btn-info btn-mini">TBU</a><span class="divider"> </span></li>
-
         </ul>
-        <%= yield %>
+        <div class="row-fluid content">
+          <%= yield %>
+        </div>
       </div>
     </div>
-    <footer>
-      KC Sunlight by Kevon C
-    </footer>
+    <footer>KC Sunlight by Kevon C</footer>
   </body>
 </html>
