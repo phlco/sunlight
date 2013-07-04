@@ -5,6 +5,6 @@
 </form>
 <%if @favorites then%>
 	<%@favorites.each do |legislator| %>
-		<p><%=legislator.firstname%><p>
+		<p><a href = '/legsilators/<%=legislator.id%>'><%=legislator.firstname%></a><p>
 	<%end%>
 <%end%>
