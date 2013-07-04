@@ -12,7 +12,7 @@ class LegislatorTable < ActiveRecord::Migration
   end
 
   def down
-  	drop_table legislators
+  	drop_table :legislators
   end
 end
 
