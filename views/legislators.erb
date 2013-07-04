@@ -1,14 +1,25 @@
 <h1>List of Legislators Based on Zip Code Search:</h1>
 <% @legislators.each do |legislator| %>
-<h2><%= legislator.firstname  %> <%= legislator.lastname  %></h2>
-  <ul>
-    <li><b> Phone:</b>        <%= legislator.phone %></li>
-    <li><b> Party:</b>          <%= legislator.party %></li>
-    <li><b> State:</b>          <%= legislator.state %></li>
-    <li><b> Twitter:</b>       <%= legislator.twitter_id %></li>
-    <li><b> In Office?</b>     <%= legislator.in_office %></li>
-    <li><b> Votesmart:</b>   <%= legislator.votesmart_id %></li>
-  </ul>
+
+<% color = "" %>
+<% if legislator.party == "D" %>
+  <% color = 'blue' %>
+<% elsif legislator.party == "R" %>
+  <% color = 'red' %>
+<% end %>
+
+<div style="color: <%= color %>">
+  <h2><%= legislator.firstname  %> <%= legislator.lastname  %>
+  </h2>
+    <ul>
+      <li><b> Phone:</b>        <%= legislator.phone %></li>
+      <li><b> Party:</b>          <%= legislator.party %></li>
+      <li><b> State:</b>          <%= legislator.state %></li>
+      <li><b> Twitter:</b>       <%= legislator.twitter_id %></li>
+      <li><b> In Office?</b>     <%= legislator.in_office %></li>
+      <li><b> Votesmart:</b>   <%= legislator.votesmart_id %></li>
+    </ul>
+</div>
   <form action="/new_favorite_legislator" method="post">
     <input type="hidden" name="votesmart_id" value="<%= legislator.votesmart_id %>">
     <button>Fav Legislator</button>
