@@ -4,6 +4,7 @@ class LegislatorTable < ActiveRecord::Migration
   		t.string :firstname
   		t.string :lastname
   		t.string :party
+             t.string :phone
   		t.string :state
   		t.string :twitter_id
   		t.boolean :in_office

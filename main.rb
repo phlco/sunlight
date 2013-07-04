@@ -45,7 +45,7 @@ post '/favorite' do
 	l = Sunlight::Legislator.all_where(:phone => params[:phone]).first 
 	unless in_database? params[:phone]
 		Legislator.create(firstname: l.firstname, lastname: l.lastname, party: l.party,
-		state: l.state, twitter_id: l.twitter_id, in_office: l.in_office, 
+		phone: l.phone, state: l.state, twitter_id: l.twitter_id, in_office: l.in_office, 
 		votesmart_id: l.votesmart_id)
 	end
 	redirect to('/index')

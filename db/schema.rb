@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130703200929) do
     t.string  "firstname"
     t.string  "lastname"
     t.string  "party"
+    t.string  "phone"
     t.string  "state"
     t.string  "twitter_id"
     t.boolean "in_office"
