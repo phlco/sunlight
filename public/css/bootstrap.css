@@ -676,7 +676,7 @@ cite {
 }
 
 .muted {
-  color: #999999;
+  color: #F5C500;
 }
 
 a.muted:hover,
@@ -742,7 +742,7 @@ h6 {
   font-family: inherit;
   font-weight: bold;
   line-height: 20px;
-  color: inherit;
+  color: #F5C500;
   text-rendering: optimizelegibility;
 }
 
@@ -6157,7 +6157,7 @@ a.badge:focus {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
-  color: inherit;
+  color: #F5C500;
 }
 
 .hero-unit li {
