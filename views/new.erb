@@ -7,6 +7,11 @@
 <p>Twitter handle: @<%= congressperson.twitter_id %></p>
 <p>In office?: <%= congressperson.in_office %></p>
 <p>Votesmart ID: <%= congressperson.votesmart_id %></p>
+<form action='/favorites' method='post'>
+  <input value='votesmart_id' name='votesmart_id' type='hidden'>
+  <button>Favorite</button>
+<br/>
+<br/>
 <br/>
 <br/>
 <% end %>

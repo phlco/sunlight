@@ -31,3 +31,7 @@ get '/new' do
   @congresspeople = Sunlight::Legislator.all_in_zipcode(zip_code)
   erb :new
 end
+
+post '/favorites' do
+  redirect to('/')
+end
