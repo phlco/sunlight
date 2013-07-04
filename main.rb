@@ -8,11 +8,11 @@ require 'sunlight'
 
 Sunlight::Base.api_key = '035fbbb591aa4fdba299e64c0d9e867c'
 
-# set :database, {
-#   adapter: 'postgresql',
-#   database: 'sunlight',
-#   host: 'localhost'
-# }
+set :database, {
+  adapter: 'postgresql',
+  database: 'legislators',
+  host: 'localhost'
+}
 
 # This should show index
 # Search box and list FAVORITE LEGISLATORS
