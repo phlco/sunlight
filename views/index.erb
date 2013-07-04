@@ -5,3 +5,14 @@
 </form>
 
 <h2>List of Favorites:</h2>
+<% @favorite_legislators.each do |favorite| %>
+<h3><%= favorite.first  %> <%= favorite.last  %></h3>
+<ul>
+    <li><b> Phone:</b>        <%= favorite.phone %></li>
+    <li><b> Party:</b>          <%= favorite.party %></li>
+    <li><b> State:</b>          <%= favorite.state %></li>
+    <li><b> Twitter:</b>       <%= favorite.twitter_id %></li>
+    <li><b> In Office?</b>     <%= favorite.in_office %></li>
+    <li><b> Votesmart:</b>   <%= favorite.votesmart_id %></li>
+  </ul>
+  <% end %>
