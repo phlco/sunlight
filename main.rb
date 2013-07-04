@@ -18,16 +18,19 @@ set :database, {
 class Favorite_Legislator < ActiveRecord::Base
 end
 
+# Show index page with zip box and legislator list
 get '/' do
   @favorites = Favorite_Legislator.all
   erb :index
 end
 
+# Show the legislator search results
 get '/legislators' do
   @members_of_congress = Sunlight::Legislator.all_in_zipcode(params[:zip])
   erb :legislators
 end
 
+# Store the favorited legislator in the database
 post '/favorited' do
   fave = YAML.load(params[:favorited])
   Favorite_Legislator.create(:firstname => fave.firstname, :lastname => fave.lastname, :party => fave.party, :phone => fave.phone, :state => fave.state, :twitter_id => fave.twitter_id, :in_office => fave.in_office, :votesmart_id => fave.votesmart_id)
@@ -36,8 +39,7 @@ end
 
 
 
-#members_of_congress = Sunlight::Legislator.all_in_zipcode(90210)
-#members_of_congress.first.title
+
 
 
 

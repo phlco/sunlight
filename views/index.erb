@@ -1,10 +1,12 @@
 <h1>Search for Legislators by ZIP code</h1>
+
 <form class="zipbox" action="/legislators" method="GET">
   <input type="text" name="zip" value = "ZIP code" autofocus>
   <p><button>SUBMIT</button><p>
 </form>
 
 <h2>Favorite Legislators</h2>
+
 <% @favorites.each do |favorite| %>
   <p><%= favorite.firstname %> <%= favorite.lastname %><p>
 <% end %>
