@@ -28,10 +28,6 @@ helpers do
 end
 
 get '/' do 
-
-end
-
-get '/index' do
 	@favorites = Legislator.all
 	erb :index
 end
