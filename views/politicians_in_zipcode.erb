@@ -1,7 +1,6 @@
 <div class="politicians">
- <h1>List of politicians Based on Zip Code Search:</h1>
+ <h1>Politicians in <span><%="#{params[:zipcode]}"%></span>:</h1>
 <% @politicians.each do |politician| %>
 <h2><%= politician.firstname  %> <%= politician.lastname  %></h2>
-
 <% end %>
 </div>
