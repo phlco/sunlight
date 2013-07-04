@@ -1,10 +1,9 @@
 <h1>Find some Congresspeople</h1>
-<form action="/" method="post">
+<form action="/new" method="get">
   Zip Code:
   <br/>
-  <input type="text" name="zip_code"></input>
+  <input type="text" name="zip_code">
   <br/>
   <button>Submit</button>
 </form>
 
-<p><%= @congresspeople %></p>

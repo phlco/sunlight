@@ -8,6 +8,7 @@ class Congresspeople < ActiveRecord::Migration
       t.string :state
       t.string :twitter_id
       t.boolean :in_office, default = true
+      t.integer :votesmart_id
     end
   end
 

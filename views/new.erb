@@ -1,0 +1,14 @@
+<p><% @congresspeople.each do |congressperson| %></p>
+<p>Name: <%= congressperson.firstname %>
+  <%= congressperson.lastname %></p>
+<p>Party: <%= congressperson.party %></p>
+<p>State: <%= congressperson.state %></p>
+<p>Phone number: <%= congressperson.phone %></p>
+<p>Twitter handle: @<%= congressperson.twitter_id %></p>
+<p>In office?: <%= congressperson.in_office %></p>
+<p>Votesmart ID: <%= congressperson.votesmart_id %></p>
+<br/>
+<br/>
+<% end %>
+
+<a href="/">Index</a>

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20130703203354) do
     t.string  "twitter_id"
     t.boolean "in_office"
     t.boolean "true"
+    t.integer "votesmart_id"
   end
 
 end
