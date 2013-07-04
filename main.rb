@@ -40,14 +40,14 @@ end
 
 post '/legislator/:phone' do
   phone = params[:phone]
-  fav_legislator = Sunlight::Legislator.all_where(:phone => phone)
-  firstname = fav_legislator[0].firstname
-  lastname = fav_legislator[0].lastname
-  party = fav_legislator[0].party
-  votesmart_id = fav_legislator[0].votesmart_id
-  state = fav_legislator[0].state
-  twitter_id = fav_legislator[0].twitter_id
-  in_office = fav_legislator[0].in_office
+  fav_legislator = Sunlight::Legislator.all_where(:phone => phone).first
+  firstname = fav_legislator.firstname
+  lastname = fav_legislator.lastname
+  party = fav_legislator.party
+  votesmart_id = fav_legislator.votesmart_id
+  state = fav_legislator.state
+  twitter_id = fav_legislator.twitter_id
+  in_office = fav_legislator.in_office
 
   leg = Legislator.create(firstname: firstname, lastname: lastname, party: party, phone: phone, state: state, twitter_id: twitter_id, in_office: in_office, votesmart_id: votesmart_id)
   redirect to("/fav")
