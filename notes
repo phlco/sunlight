@@ -3,10 +3,15 @@ index
 list favorites
 
 search results show legislators with add boxes
+
 Republican legislators should be red.
 Democratic legislators should be blue.
 Independents are purple
-checked boxes save to favorites
+
+chosen boxes save to favorites
 redirects to index
 
+create database
+rake db:create_migration NAME=create_favorites
 Favorited legislators should have firstname and lastname, party, phone, state, twitter_id, and in_office, votesmart_id in the database
+

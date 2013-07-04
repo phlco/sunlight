@@ -1,13 +1,14 @@
 <div class="row-fluid">
   <div class="span4">
     <h2>Legislators</h2>
-    <p>zip code <%= @zip %></p>
+    <p>For zip code <%= @zip %></p>
+    <br>
     <% @legislators.each do |person| %>
       <ul>
         <form action="/fav" method="POST">
           <input type="hidden" name="bioguide_id=" value="<%= person.bioguide_id %>">
           <!-- send unique id to /fav -->
-        <button class="btn"><%= person.firstname %> <%= person.lastname %></button>
+        <button class="btn" width="150px"><%= person.firstname %> <%= person.lastname %></button>
         <!-- add party color -->
         </form>
 
