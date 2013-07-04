@@ -1,4 +1,5 @@
 <p><% @congresspeople.each do |congressperson| %></p>
+<div class="<%= congressperson.party %>">
 <p>Name: <%= congressperson.firstname %>
   <%= congressperson.lastname %></p>
 <p>Party: <%= congressperson.party %></p>
@@ -14,6 +15,7 @@
 <br/>
 <br/>
 <br/>
+</div>
 <% end %>
 
 <a href="/">Index</a>
