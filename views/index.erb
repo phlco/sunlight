@@ -11,17 +11,44 @@
   </p>
 </div>
 
-
 <!-- Example row of columns -->
 <div class="row-fluid">
   <div class="span12">
     <h2>Favorite Legislators</h2>
-
+    <hr>
     <% @favorites.each do |favorite| %>
-      <li>
-          <%= favorite['firstname'] %> <%= favorite['lastname'] %>
-        </a>
-      </li>
+      <% if favorite['party'] == "D" %>
+        <h4 class="blue"><%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
+          <p>
+            Phone: <%= favorite['phone'] %><br>
+            State: <%= favorite['state'] %><br>
+            Twitter: <%= favorite['twitter_id'] %><br>
+            In Office: <%= favorite['in_office'] %><br>
+            Votesmart ID: <%= favorite['votesmart_id'] %><br>
+            <hr>
+          </p>
+        <% elsif if favorite['party'] == "R" %>
+          <h4 class="red"><%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
+            <p>
+              Phone: <%= favorite['phone'] %><br>
+              State: <%= favorite['state'] %><br>
+              Twitter: <%= favorite['twitter_id'] %><br>
+              In Office: <%= favorite['in_office'] %><br>
+              Votesmart ID: <%= favorite['votesmart_id'] %><br>
+              <hr>
+          </p>
+          <% else %>
+            <h4 class="purple"><%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
+              <p>
+                Phone: <%= favorite['phone'] %><br>
+                State: <%= favorite['state'] %><br>
+                Twitter: <%= favorite['twitter_id'] %><br>
+                In Office: <%= favorite['in_office'] %><br>
+                Votesmart ID: <%= favorite['votesmart_id'] %><br>
+                <hr>
+              </p>
+        <% end %>
+      <% end %>
     <% end %>
 
   </div>

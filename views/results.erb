@@ -1,35 +1,33 @@
 <div class="row-fluid">
   <div class="span4">
-    <h2>Legislators</h2>
-    <p>For zip code <%= @zip %></p>
+    <h2 class="yellow">Legislators</h2>
+    <p>for zip code <%= @zip %></p>
     <br>
     <% @legislators.each do |person| %>
-      <ul>
-        <form action="/fav" method="POST">
-          <input type="hidden" name="bioguide_id" value="<%= person.bioguide_id %>">
-          <input type="hidden" name="firstname" value="<%= person.firstname %>">
-          <input type="hidden" name="lastname" value="<%= person.lastname %>">
-          <input type="hidden" name="party" value="<%= person.party %>">
-          <input type="hidden" name="phone" value="<%= person.phone %>">
-          <input type="hidden" name="state" value="<%= person.state %>">
-          <input type="hidden" name="twitter_id" value="<%= person.twitter_id %>">
-          <input type="hidden" name="in_office" value="<%= person.in_office %>">
-          <input type="hidden" name="votesmart_id" value="<%= person.votesmart_id %>">
+      <form action="/fav" method="POST">
+        <input type="hidden" name="bioguide_id" value="<%= person.bioguide_id %>">
+        <input type="hidden" name="firstname" value="<%= person.firstname %>">
+        <input type="hidden" name="lastname" value="<%= person.lastname %>">
+        <input type="hidden" name="party" value="<%= person.party %>">
+        <input type="hidden" name="phone" value="<%= person.phone %>">
+        <input type="hidden" name="state" value="<%= person.state %>">
+        <input type="hidden" name="twitter_id" value="<%= person.twitter_id %>">
+        <input type="hidden" name="in_office" value="<%= person.in_office %>">
+        <input type="hidden" name="votesmart_id" value="<%= person.votesmart_id %>">
 
-        <% if person.party == "D" %>
-          <button class="btn-primary" width="150px"><%= person.firstname %> <%= person.lastname %></button>
-          <% elsif if person.party == "R" %>
-            <button class="btn-danger" width="150px"><%= person.firstname %> <%= person.lastname %></button>
-            <% else %>
-            <button class="btn-success" width="150px"><%= person.firstname %> <%= person.lastname %></button>
-          <% end %>
-
+      <% if person.party == "D" %>
+        <button class="btn-blue" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+        <% elsif if person.party == "R" %>
+          <button class="btn-red" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+          <% else %>
+          <button class="btn-purple" width="150px"><%= person.firstname %> <%= person.lastname %></button>
         <% end %>
 
-        </form>
+      <% end %>
 
-      </ul>
+      </form>
+
     <% end %>
-    Click to add to favorites
+    Click individual button to add to favorites
   </div>
 </div>
