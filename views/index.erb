@@ -4,6 +4,8 @@
   <p><button>SUBMIT</button><p>
 </form>
 
-<% if !@favorites.empty? %>
 <h2>Favorite Legislators</h2>
+<% @favorites.each do |favorite| %>
+  <p><%= favorite.firstname %> <%= favorite.lastname %><p>
 <% end %>
+

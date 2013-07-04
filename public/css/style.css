@@ -1,13 +1,22 @@
 body {
   text-align: center;
+  font-family: sans-serif;
 }
 
 .zipbox {
   font-family: serif;
 }
 
-h1, h2 {
+h1 {
   color: rgb(16, 78, 139);
+}
+
+h2 {
+  color: rgb(128,  128, 105);
+}
+
+p {
+  color: rgb(238,  201, 0);
 }
 
 a {
@@ -19,3 +28,5 @@ div {
   padding: 20px;
   margin: 20px;
 }
+
+
