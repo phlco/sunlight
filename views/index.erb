@@ -11,7 +11,8 @@
   </form>
 </div>
 
-<h1>Favorites</h1>
+<h1>Liked:</h1>
 <% @politicians.each do |politician| %>
-<p><%= politician.firstname %></p>
+<%= politician.firstname %> <%= politician.lastname %>
+  <li><%= politician.party %> | <a href="http://twitter.com/<%= politician.twitter_id%>">@<%= politician.twitter_id %></a> | In Office? <%= politician.in_office %> | ID: <%= politician.votesmart_id %></li>
 <% end %>

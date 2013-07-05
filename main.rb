@@ -18,6 +18,7 @@ class Politicians < ActiveRecord::Base
 end
 
 get '/' do
+  #Using plural definition from db to list favorites.
   @politicians = Politicians.all
   erb :index
 end
@@ -39,7 +40,8 @@ end
 post '/like' do
   liked = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id]).first
 
-  Politicians.create(:firstname => liked.firstname,
+  Politicians.create(
+                    :firstname => liked.firstname,
                     :lastname => liked.lastname,
                     :party => liked.party,
                     :state => liked.state,

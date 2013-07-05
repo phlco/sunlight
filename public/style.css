@@ -13,9 +13,19 @@ p {
   font-size: 12px;
   text-decoration: overline;
 }
+li {
+  font-size: 15px;
+  text-decoration: none;
+  color: #585858;
+  list-style-type: none;
+}
 span {
   color: #610B0B;
   font-size: 40px;
+}
+a {
+  text-decoration: none;
+  color: #0B3B39;
 }
 a:hover {
   text-align: center;

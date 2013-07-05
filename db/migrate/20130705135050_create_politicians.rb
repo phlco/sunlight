@@ -1,3 +1,4 @@
+# Correct migration syntax
 class CreatePoliticians < ActiveRecord::Migration
   def up
     create_table :politicians do |t|
