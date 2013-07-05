@@ -23,6 +23,7 @@ class Congressperson < ActiveRecord::Base
 end
 
 get '/' do
+  @pols = Congressperson.all
   erb :index
 end
 

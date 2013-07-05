@@ -7,3 +7,10 @@
   <button>Submit</button>
 </form>
 
+<h3>Favorites</h3>
+<ul>
+  <% @pols.each do |pol| %>
+  <li><%= pol.firstname %>
+  <%= pol.lastname %></li>
+  <% end %>
+</ul>
