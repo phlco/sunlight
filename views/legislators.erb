@@ -4,10 +4,12 @@
   <% @legislators.each do |legislator| %>
     <li>
       <h3>
-        <a href="/legislators/<%= @zipcode %>/<%= legislator.bioguide_id %>">
+        <a href="/legislator/<%= legislator.bioguide_id %>">
           <%= "#{legislator.title}. #{legislator.firstname} #{legislator.lastname}" %>
         </a>
       </h3>
     </li>
   <% end %>
 </ul>
+
+<a href="/">Homepage</a>

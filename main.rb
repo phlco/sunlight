@@ -14,9 +14,13 @@ set :database, {
   host: 'localhost'
 }
 
+class Favorite < ActiveRecord::Base
+end
+
 # This should show index
 # Search box and list FAVORITE LEGISLATORS
 get '/' do
+  @legislators = Favorite.all
  erb :index
 end
 
@@ -35,12 +39,19 @@ get '/legislators/:zipcode' do
   erb :legislators
 end
 
-get '/legislators/:zipcode/:bioguide_id' do
+# This should display an individual legislator and details
+get '/legislator/:bioguide_id' do
   bioguide_id = params[:bioguide_id]
   @legislator = Sunlight::Legislator.all_where(:bioguide_id => bioguide_id).first
   erb :legislator
 end
 
-post '/legislators/:zipcode/:bioguide_id' do
+# This should send a post request to the url
+# Create a new favorite in the favorites table in the legislators database
+post '/legislator/:bioguide_id' do
+  bioguide_id = params[:bioguide_id]
+  legislator = Sunlight::Legislator.all_where(:bioguide_id => bioguide_id).first
+  favorite = Favorite.create(bioguide_id: legislator.bioguide_id, title: legislator.title, firstname: legislator.firstname, lastname: legislator.lastname, party: legislator.party, phone: legislator.phone, state: legislator.state, twitter_id: legislator.twitter_id, in_office: legislator.in_office, votesmart_id: legislator.votesmart_id)
   redirect to "/"
 end
+

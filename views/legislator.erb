@@ -1,4 +1,5 @@
 <h2><%= "#{@legislator.title}. #{@legislator.firstname} #{@legislator.lastname}" %></h2>
+
 <ul>
   <li>Party:  <% if @legislator.party == "D" %>
                 Democratic Party
@@ -25,17 +26,10 @@
   <li>Bioguide Id: <%= @legislator.bioguide_id %></li>
   <li>Votesmart Id: <%= @legislator.votesmart_id %></li>
 </ul>
-<form action="/legislators/:zipcode/:bioguide_id" method="post">
-  <input type="hidden" value=<%= @legislator.bioguide_id %> name="bioguide_id">
-  <input type="hidden" value=<%= @legislator.title %> name="title">
-  <input type="hidden" value=<%= @legislator.firstname %> name="firstname">
-  <input type="hidden" value=<%= @legislator.lastname %> name="lastname">
-  <input type="hidden" value=<%= @legislator.party %> name="party">
-  <input type="hidden" value=<%= @legislator.phone %> name="phone">
-  <input type="hidden" value=<%= @legislator.state %> name="state">
-  <input type="hidden" value=<%= @legislator.twitter_id %> name="twitter_id">
-  <input type="hidden" value=<%= @legislator.in_office %> name="in_office">
-  <input type="hidden" value=<%= @legislator.votesmart_id %> name="votesmart_id">
+
+<form action="/legislator/<%= @legislator.bioguide_id %>" method="post">
+  <input type="hidden" value="<%= @legislator.bioguide_id %>" name="bioguide_id">
   <button>Add to Favorites</button>
 </form>
-<a href=""></a>
+
+<a href="/">Homepage</a><br/>

@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20130704204019) do
     t.string   "phone"
     t.string   "state"
     t.string   "twitter_id"
-    t.string   "in_office"
+    t.boolean  "in_office"
     t.string   "votesmart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
