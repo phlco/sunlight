@@ -1,0 +1,26 @@
+<div class="row-fluid">
+  <div class="span4">
+    <h2 class="yellow">Legislators</h2>
+    <p>for zip code <%= @zip %></p>
+    <br>
+    <% @legislators.each do |person| %>
+      <form action="/fav" method="POST">
+        <input type="hidden" name="bioguide_id" value="<%= person.bioguide_id %>">
+
+
+      <% if person.party == "D" %>
+        <button class="btn-blue" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+        <% elsif if person.party == "R" %>
+          <button class="btn-red" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+          <% else %>
+          <button class="btn-purple" width="150px"><%= person.firstname %> <%= person.lastname %></button>
+        <% end %>
+
+      <% end %>
+
+      </form>
+
+    <% end %>
+    Click individual button to add to favorites
+  </div>
+</div>

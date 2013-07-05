@@ -1,0 +1,45 @@
+<div class="hero-unit">
+  <h1>Input Zip</h1>
+  <p>To find legislators</p>
+  <p>
+
+  <form action="/results" method="GET">
+  <input type="text" placeholder="zip code" name="zip"><br>
+  <button class="btn">Search</button>
+  </form>
+
+  </p>
+</div>
+
+<div class="row-fluid">
+  <div class="breadcrumb">
+    <h2>Favorite Legislators</h2>
+  </div>
+</div>
+
+
+<div class="row-fluid">
+    <% @favorites.each do |favorite| %>
+    <div class="span4">
+      <div class="breadcrumb">
+      <% if favorite['party'] == "D" %>
+        <h4 class="blue">
+        <% elsif if favorite['party'] == "R" %>
+          <h4 class="red">
+          <% else %>
+          <h4 class="purple">
+        <% end %>
+      <% end %>
+          <%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
+          <hr>
+            Phone: <%= favorite['phone'] %><br>
+            State: <%= favorite['state'] %><br>
+            Twitter: <%= favorite['twitter_id'] %><br>
+            In Office: <%= favorite['in_office'] %><br>
+            Votesmart ID: <%= favorite['votesmart_id'] %><br>
+      </div>
+  </div>
+  <% end %>
+
+
+</div>
