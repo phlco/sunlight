@@ -469,6 +469,10 @@ a:focus {
   *width: 31.861702127659576%;
 }
 
+.row-fluid > .span4:nth-child(4) {
+    margin-left:0;
+}
+
 .row-fluid .span3 {
   width: 23.404255319148934%;
   *width: 23.351063829787233%;
@@ -1353,7 +1357,7 @@ textarea,
 }
 
 .controls-row [class*="span"] + [class*="span"] {
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 input.span12,

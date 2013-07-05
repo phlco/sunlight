@@ -12,51 +12,30 @@
 </div>
 
 <!-- Example row of columns -->
-<div class="row-fluid">
-  <div class="span4">
     <h2>Favorite Legislators</h2>
     <br>
+<div class="row-fluid">
     <% @favorites.each do |favorite| %>
+    <div class="span4">
+      <div class="breadcrumb">
       <% if favorite['party'] == "D" %>
-        <div class="breadcrumb">
-        <h4 class="blue"><%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
+        <h4 class="blue">
+        <% elsif if favorite['party'] == "R" %>
+          <h4 class="red">
+          <% else %>
+          <h4 class="purple">
+        <% end %>
+      <% end %>
+          <%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
           <hr>
-          <p>
             Phone: <%= favorite['phone'] %><br>
             State: <%= favorite['state'] %><br>
             Twitter: <%= favorite['twitter_id'] %><br>
             In Office: <%= favorite['in_office'] %><br>
             Votesmart ID: <%= favorite['votesmart_id'] %><br>
-          </p>
-        </div>
-        <% elsif if favorite['party'] == "R" %>
-          <div class="breadcrumb">
-          <h4 class="red"><%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
-            <hr>
-            <p>
-              Phone: <%= favorite['phone'] %><br>
-              State: <%= favorite['state'] %><br>
-              Twitter: <%= favorite['twitter_id'] %><br>
-              In Office: <%= favorite['in_office'] %><br>
-              Votesmart ID: <%= favorite['votesmart_id'] %><br>
-          </p>
-        </div>
-          <% else %>
-          <div class="breadcrumb">
-            <h4 class="purple"><%= favorite['firstname'] %> <%= favorite['lastname'] %></h4>
-              <hr>
-              <p>
-                Phone: <%= favorite['phone'] %><br>
-                State: <%= favorite['state'] %><br>
-                Twitter: <%= favorite['twitter_id'] %><br>
-                In Office: <%= favorite['in_office'] %><br>
-                Votesmart ID: <%= favorite['votesmart_id'] %><br>
-              </p>
-            </div>
-          <% end %>
-      <% end %>
-    <% end %>
-
+      </div>
   </div>
+  <% end %>
+
 
 </div>
