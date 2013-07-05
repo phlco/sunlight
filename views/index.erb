@@ -11,6 +11,6 @@
 <ul>
   <% @pols.each do |pol| %>
   <li><%= pol.firstname %>
-  <%= pol.lastname %></li>
+  <%= pol.lastname %> (<%= pol.party %>, <%= pol.state %>)</li>
   <% end %>
 </ul>
