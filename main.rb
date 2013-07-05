@@ -37,16 +37,29 @@ end
 
 post '/fav' do
   @bioguide_id = params[:bioguide_id]
-  @firstname = params[:firstname]
-  @lastname = params[:lastname]
-  @party = params[:party]
-  @phone = params[:phone]
-  @state = params[:state]
-  @twitter_id = params[:twitter_id]
-  @in_office = params[:in_office]
-  @votesmart_id = params[:votesmart_id]
+  @favorites = Sunlight::Legislator.all_where(:bioguide_id => @bioguide_id).first
 
-  @favorite = Favorites.create(params)
+  favorite = Favorites.create(params)
+
+  favorite.firstname = @favorites.firstname
+  favorite.lastname = @favorites.lastname
+  favorite.party = @favorites.party
+  favorite.phone = @favorites.phone
+  favorite.state = @favorites.state
+  favorite.twitter_id = @favorites.twitter_id
+  favorite.in_office = @favorites.in_office
+  favorite.votesmart_id = @favorites.votesmart_id
+  favorite.save
+
+  # @firstname = params[:firstname]
+  # @lastname = params[:lastname]
+  # @party = params[:party]
+  # @phone = params[:phone]
+  # @state = params[:state]
+  # @twitter_id = params[:twitter_id]
+  # @in_office = params[:in_office]
+  # @votesmart_id = params[:votesmart_id]
+
   # get unique id from results.erb
   # new api call using unique id
   # send info to database
