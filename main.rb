@@ -14,10 +14,11 @@ set :database, {
               :host => 'localhost'
 }
 
-class Politician < ActiveRecord::Base
+class Politicians < ActiveRecord::Base
 end
 
 get '/' do
+  @politicians = Politicians.all
   erb :index
 end
 #Have to transfer the zipcode onto the new page to display politicians
@@ -38,7 +39,7 @@ end
 post '/like' do
   liked = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id]).first
 
-  Politician.create(:firstname => liked.firstname,
+  Politicians.create(:firstname => liked.firstname,
                     :lastname => liked.lastname,
                     :party => liked.party,
                     :state => liked.state,
@@ -46,4 +47,5 @@ post '/like' do
                     :in_office => liked.in_office,
                     :votesmart_id => liked.votesmart_id
                     )
+  redirect to('/')
 end

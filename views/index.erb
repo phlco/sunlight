@@ -10,3 +10,8 @@
   <button>Search</button>
   </form>
 </div>
+
+<h1>Favorites</h1>
+<% @politicians.each do |politician| %>
+<p><%= politician.firstname %></p>
+<% end %>
