@@ -33,3 +33,17 @@ get '/:zipcode' do
   @politicians = Sunlight::Legislator.all_in_zipcode(@zipcode)
   erb :politicians_in_zipcode
 end
+
+#using id passed from like button on zipcode page
+post '/like' do
+  liked = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id]).first
+
+  Politician.create(:firstname => liked.firstname,
+                    :lastname => liked.lastname,
+                    :party => liked.party,
+                    :state => liked.state,
+                    :twitter_id => liked.twitter_id,
+                    :in_office => liked.in_office,
+                    :votesmart_id => liked.votesmart_id
+                    )
+end

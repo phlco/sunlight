@@ -16,5 +16,12 @@
     <%=person.firstname%> <%=person.lastname%>
     <p> @<%= person.twitter_id %> | <%= person.state %> | <%= person.phone %> </p>
     </h3>
-  <%end%>
+
+    <form action = '/like' method = 'post'>
+      <input type = "hidden" name = "votesmart_id" value="<%=person.votesmart_id%>">
+      <button> Like </button>
+    </form>
+
+    <%end%>
+
 </div>
