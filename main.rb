@@ -20,7 +20,7 @@ end
 # This should show index
 # Search box and list FAVORITE LEGISLATORS
 get '/' do
-  @legislators = Favorite.all
+  @favorites = Favorite.all
  erb :index
 end
 

@@ -6,3 +6,10 @@
 </form>
 
 <h3>Favorite Legislators</h3>
+<ul>
+  <% @favorites.each do |favorite| %>
+    <li>
+      <a href="/legislator/<%= favorite.bioguide_id %>"><%= "#{favorite.title}. #{favorite.firstname} #{favorite.lastname}" %></a>
+    </li>
+  <% end %>
+</ul>
