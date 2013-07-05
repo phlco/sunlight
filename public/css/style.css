@@ -1,0 +1,19 @@
+h1 {
+  color: green;
+}
+
+.democrat_blue {
+  color: blue;
+}
+
+.republican_red {
+  color: red;
+}
+
+.independent_purple {
+  color: purple;
+}
+
+a {
+  text-decoration: none;
+}

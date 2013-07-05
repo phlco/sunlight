@@ -2,13 +2,31 @@
 
 <ul>
   <% @legislators.each do |legislator| %>
-    <li>
-      <h3>
-        <a href="/legislator/<%= legislator.bioguide_id %>">
-          <%= "#{legislator.title}. #{legislator.firstname} #{legislator.lastname}" %>
-        </a>
-      </h3>
-    </li>
+    <% if legislator.party == "D" %>
+      <li>
+        <h3>
+          <a class="democrat_blue" href="/legislator/<%= legislator.bioguide_id %>">
+            <%= "#{legislator.title}. #{legislator.firstname} #{legislator.lastname}" %>
+          </a>
+        </h3>
+      </li>
+    <% elsif legislator.party == "R" %>
+      <li>
+        <h3>
+          <a class="republican_red" href="/legislator/<%= legislator.bioguide_id %>">
+            <%= "#{legislator.title}. #{legislator.firstname} #{legislator.lastname}" %>
+          </a>
+        </h3>
+      </li>
+    <% else %>
+      <li>
+        <h3>
+          <a class="independent_purple" href="/legislator/<%= legislator.bioguide_id %>">
+            <%= "#{legislator.title}. #{legislator.firstname} #{legislator.lastname}" %>
+          </a>
+        </h3>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 

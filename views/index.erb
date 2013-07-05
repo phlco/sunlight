@@ -6,10 +6,28 @@
 </form>
 
 <h3>Favorite Legislators</h3>
-<ul>
-  <% @favorites.each do |favorite| %>
-    <li>
-      <a href="/legislator/<%= favorite.bioguide_id %>"><%= "#{favorite.title}. #{favorite.firstname} #{favorite.lastname}" %></a>
-    </li>
-  <% end %>
-</ul>
+<h4>
+  <ul>
+    <% @favorites.each do |favorite| %>
+      <% if favorite.party == "D" %>
+        <li>
+          <a class="democrat_blue" href="/legislator/<%= favorite.bioguide_id %>">
+            <%= "#{favorite.title}. #{favorite.firstname} #{favorite.lastname}" %>
+          </a>
+        </li>
+      <% elsif favorite.party == "R" %>
+        <li>
+          <a class="republican_red" href="/legislator/<%= favorite.bioguide_id %>">
+            <%= "#{favorite.title}. #{favorite.firstname} #{favorite.lastname}" %>
+          </a>
+        </li>
+      <% else %>
+        <li>
+          <a class="independent_purple" href="/legislator/<%= favorite.bioguide_id %>">
+            <%= "#{favorite.title}. #{favorite.firstname} #{favorite.lastname}" %>
+          </a>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</h4>
