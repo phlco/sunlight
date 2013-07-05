@@ -1,0 +1,60 @@
+h1 {
+    color: #333;
+    font-family: Impact;
+    letter-spacing: .051em;
+    font-size: 2.5em;
+}
+
+body {
+    font-family: Georgia;
+    background-color: #e9e9e9;
+}
+
+li {
+    list-style: none;
+}
+
+.search {
+    float: left;
+}
+
+.favorites {
+    margin-left: 100px;
+    float: left
+}
+
+.member {
+     float: left;
+     margin-left: 80px;
+ }
+
+button {
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: .5em 1.5em;
+    font-family: Verdana;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.header{
+    background-color: rgba(202,202,202,4);
+    margin-left: -10px;
+    margin-right: -5px;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.header li {
+    display: inline;
+    padding-right: 5px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000
+}

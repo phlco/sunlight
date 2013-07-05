@@ -1,0 +1,28 @@
+<h1><%= @zipcode %> Legislators</h1>
+
+<% @legislators.each do |member|  %>
+    <div class="member" ><li>
+      <%= member.firstname %> <%= member.lastname %>
+        <ul>
+          <li><%= member.party %></li>
+          <li><%= member.phone %></li>
+          <li>@<%= member.twitter_id %></li>
+          <li><%= member.state %></li>
+          <li><%= member.in_office %></li>
+          <li><%= member.votesmart_id %></li>
+        </ul>
+    </li>
+
+      <form action = "/favorite" method="post">
+        <input type="hidden" name = "firstname" value= "<%= member.firstname %>" />
+        <input type="hidden" name = "lastname" value= "<%= member.lastname %>" />
+        <input type="hidden" name = "party" value= "<%= member.party %>" />
+        <input type="hidden" name = "phone" value= "<%= member.phone %>" />
+        <input type="hidden" name = "twitter_id" value= "<%= member.twitter_id %>" />
+        <input type="hidden" name = "state" value= "<%= member.state %>" />
+        <input type="hidden" name = "in_office" value= "<%= member.in_office %>" />
+        <input type="hidden" name = "votesmart_id" value= "<%= member.votesmart_id %>" />
+        <button>Add to Favorites</button>
+      </form>
+    </div>
+<% end %>
