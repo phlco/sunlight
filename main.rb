@@ -33,5 +33,8 @@ get '/new' do
 end
 
 post '/favorites' do
+  congresspeoples = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id]).first
+  # binding.pry
+  Congressperson.create(firstname: congresspeoples.firstname, lastname: congresspeoples.lastname, state: congresspeoples.state, party: congresspeoples.party, phone: congresspeoples.phone, twitter_id: congresspeoples.twitter_id, in_office: congresspeoples.in_office, votesmart_id: congresspeoples.votesmart_id)
   redirect to('/')
 end

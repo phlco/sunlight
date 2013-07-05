@@ -9,8 +9,9 @@
 <p>In office?: <%= congressperson.in_office %></p>
 <p>Votesmart ID: <%= congressperson.votesmart_id %></p>
 <form action='/favorites' method='post'>
-  <input value='votesmart_id' name='votesmart_id' type='hidden'>
+  <input value='<%= congressperson.votesmart_id %>' name='votesmart_id' type='hidden'>
   <button>Favorite</button>
+</form>
 <br/>
 <br/>
 <br/>
