@@ -1,6 +1,20 @@
 <div class="politicians">
- <h1>Politicians in <span><%="#{params[:zipcode]}"%></span>:</h1>
-<% @politicians.each do |politician| %>
-<h2><%= politician.firstname  %> <%= politician.lastname  %></h2>
-<% end %>
+  <h1>Politicians in <span><%="#{params[:zipcode]}"%></span>:</h1>
+
+  <%@politicians.each do |person|%>
+    <%party = person.party%>
+
+    <%color = '#9A2EFE'%>
+      <% if party == "D" %>
+        <% color = '#2E64FE' %>
+      <% elsif party == "R" %>
+        <% color = '#FE2E2E' %>
+
+    <% end %>
+
+    <h3 style = "color: <%=color%>">
+    <%=person.firstname%> <%=person.lastname%>
+    <p> @<%= person.twitter_id %> | <%= person.state %> | <%= person.phone %> </p>
+    </h3>
+  <%end%>
 </div>

@@ -8,22 +8,31 @@ body {
   color: #151515;
   text-align: center;
 }
+p {
+  color: black;
+  font-size: 12px;
+  text-decoration: overline;
+}
 span {
   color: #610B0B;
   font-size: 40px;
 }
 a:hover {
-  color: #FE2E2E;
   text-align: center;
+}
+a:hover.Home {
+  color: #FE2E2E;
 }
 h1 {
   color: black;
   text-align: center;
   letter-spacing: 2.0px;
+  line-height: 125%;
 }
-h4 {
+h3 {
   font-family: "Alike";
-  color: #585858;
+  color: inherit;
+  line-height: 80%;
 }
 .Home {
   line-height: 100px;
