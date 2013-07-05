@@ -1,0 +1,16 @@
+<h1>Find some Congresspeople</h1>
+<form action="/new" method="get">
+  Zip Code:
+  <br/>
+  <input type="text" name="zip_code">
+  <br/>
+  <button>Submit</button>
+</form>
+
+<h3>Favorites</h3>
+<ul>
+  <% @pols.each do |pol| %>
+  <li><%= pol.firstname %>
+  <%= pol.lastname %> (<%= pol.party %>, <%= pol.state %>)</li>
+  <% end %>
+</ul>

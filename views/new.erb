@@ -1,0 +1,20 @@
+<p><% @congresspeople.each do |congressperson| %></p>
+<div class="<%= congressperson.party %>">
+<p>Name: <%= congressperson.firstname %>
+  <%= congressperson.lastname %></p>
+<p>Party: <%= congressperson.party %></p>
+<p>State: <%= congressperson.state %></p>
+<p>Phone number: <%= congressperson.phone %></p>
+<p>Twitter handle: @<%= congressperson.twitter_id %></p>
+<p>In office?: <%= congressperson.in_office %></p>
+<p>Votesmart ID: <%= congressperson.votesmart_id %></p>
+<form action='/favorites' method='post'>
+  <input value='<%= congressperson.votesmart_id %>' name='votesmart_id' type='hidden'>
+  <button>Favorite</button>
+</form>
+
+</div>
+<% end %>
+<br/><br/><br/>
+<a class="index" href="/">Index</a>
+<br/><br/>
