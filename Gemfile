@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'pg'
+gem 'sinatra'
+gem 'sinatra-reloader'
+gem 'pry'
+gem 'sinatra-activerecord'
+gem 'rake'
+gem 'sunlight'
+gem 'json'
+gem 'ym4r'
