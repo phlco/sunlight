@@ -1,3 +1,9 @@
+div {
+  padding: 10px;
+  border-radius: 15px;
+  width: 300px;
+}
+
 .R {
   background: red;
   color: white;
@@ -11,4 +17,17 @@
 .I {
   background: purple;
   color: white;
+}
+
+.index {
+  font-size: 200%;
+  color: white;
+  margin-left: 100px;
+  border: groove;
+  border-radius: 10px;
+  border-width: 8px;
+  border-color: white;
+  padding: 5px;
+  text-decoration: none;
+  background: black;
 }
