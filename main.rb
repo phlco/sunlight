@@ -18,7 +18,7 @@ class Favorite < ActiveRecord::Base
 end
 
 # This should show index
-# Search box and list FAVORITE LEGISLATORS
+# Search box and list of favorite legislators from favorites table in legislators database
 get '/' do
   @favorites = Favorite.all
  erb :index

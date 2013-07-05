@@ -1,4 +1,16 @@
-<h2><%= "#{@legislator.title}. #{@legislator.firstname} #{@legislator.lastname}" %></h2>
+<% if @legislator.party == "D" %>
+  <h2 class="democrat_blue">
+    <%= "#{@legislator.title}. #{@legislator.firstname} #{@legislator.lastname}" %>
+  </h2>
+<% elsif @legislator.party == "R" %>
+  <h2 class="republican_red">
+    <%= "#{@legislator.title}. #{@legislator.firstname} #{@legislator.lastname}" %>
+  </h2>
+<% else %>
+  <h2 class="independent_purple">
+    <%= "#{@legislator.title}. #{@legislator.firstname} #{@legislator.lastname}" %>
+  </h2>
+<% end %>
 
 <ul>
   <li>Party:  <% if @legislator.party == "D" %>
@@ -24,12 +36,17 @@
                   <% end %>
   </li>
   <li>Bioguide Id: <%= @legislator.bioguide_id %></li>
-  <li>Votesmart Id: <%= @legislator.votesmart_id %></li>
+  <li>Votesmart Id:   <% unless @legislator.votesmart_id == "" %>
+                        <%= @legislator.votesmart_id %>
+                      <% else %>
+                        n/a
+                      <% end %>
+  </li>
 </ul>
 
 <form action="/legislator/<%= @legislator.bioguide_id %>" method="post">
   <input type="hidden" value="<%= @legislator.bioguide_id %>" name="bioguide_id">
   <button>Add to Favorites</button>
-</form>
+</form><br/>
 
 <a href="/">Homepage</a><br/>
