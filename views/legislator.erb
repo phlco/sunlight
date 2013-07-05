@@ -1,0 +1,11 @@
+<h1>Legislator</h1>
+<%="#{@legislator.firstname} #{@legislator.lastname}"%>
+<% if @legislator.party == 'D' %>
+	<%='Democratic Party'%>
+<% elsif @legislator.party == 'R' %>
+	<%='Republican Party'%>
+<% elsif @legislator.party == 'I'%>
+	<%='Independent' %>
+<% else %>
+	<%='Party Unknown'%>
+<%end%>

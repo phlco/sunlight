@@ -54,4 +54,5 @@ end
 
 get '/legislators/:id' do
 	@legislator = Legislator.find_by_id(params[:id])
+	erb :legislator
 end
