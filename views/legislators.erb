@@ -1,3 +1,4 @@
+<a href="/">Back Home</a>
 <h1>List of Legislators Based on Zip Code Search:</h1>
 <% @legislators.each do |legislator| %>
 
@@ -6,6 +7,8 @@
   <% color = 'blue' %>
 <% elsif legislator.party == "R" %>
   <% color = 'red' %>
+<% elsif legislator.party == "I" %>
+  <% color = 'purple' %>
 <% end %>
 
 <div style="color: <%= color %>">

@@ -32,8 +32,15 @@ end
 post '/new_favorite_legislator' do
   votesmart_id = params[:votesmart_id].to_i
   legislator = Sunlight::Legislator.all_where(:votesmart_id => votesmart_id).first
-  this_legislator = Legislator.create(first: legislator.firstname, last: legislator.lastname, phone: legislator.phone, state: legislator.state, twitter_id: legislator.twitter_id, in_office: legislator.in_office, votesmart_id: legislator.votesmart_id)
-  redirect to '/'
+  this_legislator = Legislator.create(
+                              first: legislator.firstname,
+                              last: legislator.lastname,
+                              phone: legislator.phone,
+                              state: legislator.state,
+                              twitter_id: legislator.twitter_id,
+                              in_office: legislator.in_office,
+                              votesmart_id: legislator.votesmart_id)
+  redirect to ('/')
 end
 
 
