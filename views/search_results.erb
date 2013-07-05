@@ -1,0 +1,9 @@
+<h2>Legislators representing area code <%= @zipcode %></h2>
+
+<ul>
+  <% @search_results.each do |search_result| %>
+    <li>
+      <%= "#{search_result.firstname} #{search_result.lastname}" %>
+    </li>
+  <% end %>
+</ul
