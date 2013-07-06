@@ -1,9 +1,16 @@
-<a href="/">Back To Home</a>
+<a href="/">Back To Home</a></br>
 
-<% @legislators.each do |legislator| %>
-<p><%= legislator.firstname %> <%= legislator.lastname %></p>
-<p><%= legislator.state %> <%= legislator.party %></p>
+<p><% @legislators.each do |legislator| %></p>
+Name: <%= legislator.firstname %> <%= legislator.lastname %></br>
+Party: <%= legislator.party %></br>
+Phone #: <%= legislator.phone %></br>
+State: <%= legislator.state %></br>
+Twitter ID: <%= legislator.twitter_id %></br>
+Currently in Office?: <%= legislator.in_office %></br>
+votesmart Id: <%= legislator.votesmart_id %>
 <% end %>
+
+
 
 
 
