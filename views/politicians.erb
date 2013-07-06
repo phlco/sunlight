@@ -1,0 +1,30 @@
+<form action='/favorite_politicians' method="POST">
+<% @politicians.each do |politician| %>
+<ul>
+  <li>
+    <%= politician.firstname %></br>
+    <%= politician.lastname %></br>
+    <%= politician.party %></br>
+    <%= politician.twitter_id %></br>
+    <%= politician.phone %></br>
+    <%= politician.votesmart_id %></br>
+    <%= politician.in_office %></br>
+  </li>
+</ul>
+
+<input type="radio" name="favorite_politician" value="<%= politician.bioguide_id %>"><br/>
+
+<% end %>
+
+<button>Submit</button>
+
+</form>
+
+
+
+
+
+
+
+
+

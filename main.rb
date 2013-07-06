@@ -7,6 +7,7 @@ require 'pry'
 require 'rubygems'
 require 'rake'
 require 'sunlight'
+
 Sunlight::Base.api_key ='035fbbb591aa4fdba299e64c0d9e867c'
 
 set :database, {adapter: "postgresql",
@@ -15,8 +16,30 @@ set :database, {adapter: "postgresql",
 
 class Politician < ActiveRecord::Base
 end
+
+
 get '/' do
-  zip = params[:zipcode] || 10001
-  @politicians= Sunlight::Legislator.all_in_zipcode zip
+  @favorites = Politician.all
   erb :index
 end
+
+
+get '/politicians' do
+  @politicians= Sunlight::Legislator.all_in_zipcode(params[:zip])
+
+  erb :politicians
+end
+
+post '/favorite_politicians' do
+  favorite = params[:favorite_politician]
+  details = Sunlight::Legislator.all_where(:bioguide_id => favorite)
+  details = details.first
+  Politician.create(:firstname => details.firstname, :lastname => details.lastname, :state => details.state, :phone => details.phone, :party => details.party, :twitter_id => details.twitter_id, :votesmart_id => details.votesmart_id)
+redirect to '/'
+end
+
+
+
+
+
+#  "#{@politicians.first.firstname} #{@politicians.first.lastname}"

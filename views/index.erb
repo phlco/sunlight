@@ -1,8 +1,11 @@
-<% @politcians.each do |politician| %>
-<ul>
-  <li>
-    <%= politician.firstname %>
-    <%= politcian.lastname %>
-  </li>
-</ul>
-<% end %>
+<form action="/politicians" method="get">
+<input type="text" name="zip">
+
+<button> Submit </button>
+
+</form>
+
+
+<% @favorites.each do |favorite| %>
+  <%= favorite.firstname %> <%=favorite.lastname%>
+  <% end %>
