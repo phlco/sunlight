@@ -1,9 +1,16 @@
 <a href="/">Back To Home</a>
 
-<% @legislators.each do |legislator| %>
+<% @votesmart.each do |votesmart| %>
 <p><%= legislator.firstname %> <%= legislator.lastname %></p>
-<p><%= legislator.state %> <%= legislator.party %></p>
 <% end %>
 
 
 
+
+
+<form action='/favs/new' method="POST">
+
+
+
+
+</form>
