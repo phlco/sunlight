@@ -12,5 +12,3 @@ Sunlight::Base.api_key = '035fbbb591aa4fdba299e64c0d9e867c'
 set :database, {adapter: "postgresql",
                 database: "politicians",
                 host: "localhost"}
-
-
