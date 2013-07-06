@@ -7,11 +7,10 @@
         <li><%= person.party %></li>
       </ul>
   </li>
-  <form action="/favs/new">
-    <input type='hidden' value=<%= person.votesmart_id %> name="votesmart_id">
-  <button>Add to favorites</button>
+  <form action="/favs/new" method="post">
+    <input type="text" value="<%= person.votesmart_id %>" name="votesmart_id">
+    <button>Add to favorites</button>
   </form>
-  </br>
     <% end %>
 </ul>
 

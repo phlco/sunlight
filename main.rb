@@ -30,7 +30,12 @@ get '/' do
   erb :index
 end
 
-get '/search' do
+post '/' do
+  @zipcode = params[:zipcode]
+  redirect to "/#{@zipcode}"
+end
+
+get '/:zipcode' do
   # Search the Sunlight API by zipcode
   # Display all available politicians
   @zipcode = params[:zipcode]
@@ -41,9 +46,11 @@ end
 post '/favs/new' do
   # Search the Sunlight API for a particular politician
   # save that politician to the database
-  votesmart_id = params[:id]
-  congressperson = Sunlight::Legislator.all_where(:votesmart_id => votesmart_id)
+  @votesmart_id = params[:votesmart_id]
+  congressperson = Sunlight::Legislator.all_where(:votesmart_id => @votesmart_id).first
+
   fave = Politician.create(params)
+
   fave.firstname = congressperson.firstname
   fave.lastname = congressperson.lastname
   fave.party = congressperson.party
@@ -51,6 +58,6 @@ post '/favs/new' do
   fave.state = congressperson.state
   fave.twitter_id = congressperson.twitter_id
   fave.in_office = congressperson.in_office
-
+  fave.save
   redirect to '/'
 end

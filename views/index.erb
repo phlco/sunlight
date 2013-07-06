@@ -1,7 +1,7 @@
 <h1>Search for Legislator by Zipcode</h1>
 
 <!-- Searches should be get requests so that you can bookmark it -->
-<form action="/search" method="get">
+<form action="/" method="post">
   <label for="zipcode">Enter a Zipcode</label>
   <input type="text" name="zipcode" autofocus>
   <button>Search</button>
@@ -9,16 +9,18 @@
 
 <h2>Saved Faves</h2>
 <!-- display all politicians saved to the database -->
+
+
 <ul>
-    <% @faves.each do |fave| %>
-    <li><%= fave.firstname %></li>
-    <li><%= fave.lastname %></li>
-    <li><%= fave.party %></li>
-    <li><%= fave.phone %></li>
-    <li><%= fave.state %></li>
-    <li><%= fave.twitter_id %></li>
-    <li><%= fave.in_office %></li>
-    <% end %>
+  <% @faves.each do |fave| %>
+      <% if fave.party == "D" %>
+        <font color="blue">
+        <% elsif fave.party == "R" %>
+          <font color="red">
+          <% else %>
+          <font color="purple">
+          </font>
+        <% end %>
+  <li><%= fave.firstname %> <%= fave.lastname %></li>
+  <% end %>
 </ul>
-
-
