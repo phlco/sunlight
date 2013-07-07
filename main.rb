@@ -1,5 +1,5 @@
 ########################################
-# Set up                               #
+# Set up
 ########################################
 require 'pry'
 require 'sinatra'
@@ -11,21 +11,37 @@ require 'sunlight'
 Sunlight::Base.api_key = '035fbbb591aa4fdba299e64c0d9e867c'
 
 ########################################
-#
+# Method Definition
 ########################################
 
+def sunlight_by_zip(zipcode)
+  result = Sunlight::Legislator.all_in_zipcode(zipcode)
+  return result
+end
+
+
+########################################
+#
+########################################
 
 get '/' do
   erb :index
 end
 
+get '/result' do
+  @search_result = sunlight_by_zip(params[:zip_input])
+  erb :searchresult
+end
 
+post '/savefav' do
+  redirect to("/")
+end
 
 
 
 
 # @bioguide_id="N000002",
-# @birthdate="1947-06-13 00:00:00 -0400",
+# @birthdate="10947-06-13 00:00:00 -0400",
 # @congress_office="2110 Rayburn House Office Building",
 # @congresspedia_url="http://www.opencongress.org/wiki/Jerrold_Nadler",
 # @crp_id="N00000939",
