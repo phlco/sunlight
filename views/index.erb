@@ -12,5 +12,25 @@ Enter your zipcode here
 </div>
 </div>
 
+<div class="favlist">
+<p>Here are your favorite legislators:</p>
+
+<% if @FavLegislators.size == 0 %>
+  <ul><li>You currently don't have any saved favorite legislators</li></ul>
+<% else %>
+  <% @FavLegislators.each do |favorite| %>
+    <ul>
+      <li><%= favorite[:firstname] %> <%= favorite[:lastname] %></li>
+      <ul>
+        <li>Party: <%= favorite[:party] %></li>
+        <li>Phone: <%= favorite[:firstname] %></li>
+        <li>Twitter: <%= favorite[:twitter_id] %></li>
+        <li>In office? <%= favorite[:in_office] %></li>
+        <li>Votesmart ID: <%= favorite[:votesmart_id] %></li>
+      </ul>
+    </ul>
+  <% end %>
+<% end %>
+</div>
 
 

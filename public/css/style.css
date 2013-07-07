@@ -54,3 +54,7 @@ p, form {
   color: white;
   border-radius: 50%;
 }
+
+.favlist {
+  margin: 20px;
+}

@@ -29,11 +29,15 @@ set :database, {
   host: 'localhost'
 }
 
+class FavLegislator < ActiveRecord::Base
+end
+
 ########################################
 # CONNECT TO DATABASE VIA AR
 ########################################
 
 get '/' do
+  @FavLegislators = FavLegislator.all
   erb :index
 end
 
@@ -43,16 +47,26 @@ get '/result' do
 end
 
 post '/savefav' do
+  favlegislator = Sunlight::Legislator.all_where(:bioguide_id => params[:bioguide_id]).first
 
-  # t.string :firstname
-  # t.string :lastname
-  # t.string :party
-  # t.string :phone
-  # t.string :twitter_id
-  # t.boolean :in_office
-  # t.string :votesmart_id
+  firstname = favlegislator.firstname
+  lastname = favlegislator.lastname
+  party = favlegislator.party
+  phone = favlegislator.phone
+  twitter_id = favlegislator.twitter_id
+  in_office = favlegislator.in_office
+  votesmart_id = favlegislator.votesmart_id
 
-
+  FavLegislator.create(
+    firstname: firstname,
+    lastname: lastname,
+    party: party,
+    phone: phone,
+    twitter_id: twitter_id,
+    in_office: in_office,
+    votesmart_id: votesmart_id
+    )
 
   redirect to("/")
 end
+
