@@ -58,7 +58,6 @@ get '/search/zipcode' do
 post '/favorites' do
   favortite = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id].to_i).first
 
-
 Politician.create(firstname: favorite.firstname, lastname: favorite.lastname, party: favorite.party, phone: favorite.phone, state: favorite.state, twitter_id: favorite.twitter_id, in_office: favorite.in_office, votesmart_id: favorite.votesmart_id)
 end
 

@@ -7,7 +7,7 @@ Name: <%= politician.firstname %> <%= politician.lastname %></br>
 
 
 <form action='/favorites' method="post">
-  <input value= "<%= politician.votesmart_id %>>" name="votesmart_id" type="hidden">
+  <input value= "<%= favorite.votesmart_id %>>" name="votesmart_id" type="hidden">
   <button>Favorites</button>
 </form>
 
