@@ -1,0 +1,17 @@
+<a href="/">Back To Home</a></br>
+
+<p><% @politicians.each do |politician| %></p>
+Name: <%= politician.firstname %> <%= politician.lastname %></br>
+
+<% end %>
+
+
+<form action='/favorites' method="post">
+  <input value= "<%= favorite.votesmart_id %>>" name="votesmart_id" type="hidden">
+  <button>Favorites</button>
+</form>
+
+
+
+
+

@@ -1,0 +1,15 @@
+<h1>Tom's Sunlight Home Page</h1>
+
+<form action='/search/zipcode' method="get">
+  Input Zip Code:</br>
+  <input type="text" name="zipcode"></br>
+  <button>Search</button>
+</form>
+
+<% if @politicians %>
+  <% @politicians.each do |politician| %>
+    <%= @politician.firstname %>
+  <% end %>
+<% end %>
+
+
