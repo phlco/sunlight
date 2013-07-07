@@ -3,6 +3,13 @@
 <form action='/search/zipcode' method="get">
   Input Zip Code:</br>
   <input type="text" name="zipcode"></br>
-  <% @legislsators %><button>Search</button>
-
+  <% @politicians %><button>Search</button>
 </form>
+
+<% if @politicians %>
+  <% @politicians.each do |politician| %>
+    <%= @politician.firstname %>
+  <% end %>
+<% end %>
+
+

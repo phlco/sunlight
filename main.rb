@@ -19,14 +19,9 @@ class Politician < ActiveRecord::Base
 end
 
 
-def legislator_in_zipcode(zip)
-   return Sunlight::Legislator.all_in_zipcode(zip)
-end
-
-#def legislator_votesmart_id(votesmart)
- #  return Sunlight::Legislator.votesmart_id(votesmart)
+#def legislator_in_zipcode(zip)
+ #  return Sunlight::Legislator.all_in_zipcode(zip)
 #end
-
 
 
 # == Schema Info
@@ -45,13 +40,26 @@ end
 
 
 get '/' do
-  erb :index
+
 end
 
+
+get '/index' do
+  @favorites = Politician.all
+  erb :index
+  end
+
 get '/search/zipcode' do
-    zipcode = params[:zipcode]
-   @legislators = legislator_in_zipcode(zipcode)
-   erb :search_results
+  @politicians = Sunlight::Legislator.all_in_zipcode(params[:zip])
+  erb :search_results
+  end
+
+
+post '/favorites' do
+  favortite = Sunlight::Legislator.all_where(:votesmart_id => params[:votesmart_id].to_i).first
+
+
+Politician.create(firstname: favorite.firstname, lastname: favorite.lastname, party: favorite.party, phone: favorite.phone, state: favorite.state, twitter_id: favorite.twitter_id, in_office: favorite.in_office, votesmart_id: favorite.votesmart_id)
 end
 
 

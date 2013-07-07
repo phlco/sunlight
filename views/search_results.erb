@@ -1,14 +1,15 @@
 <a href="/">Back To Home</a></br>
 
-<p><% @legislators.each do |legislator| %></p>
-Name: <%= legislator.firstname %> <%= legislator.lastname %></br>
-Party: <%= legislator.party %></br>
-Phone #: <%= legislator.phone %></br>
-State: <%= legislator.state %></br>
-Twitter ID: <%= legislator.twitter_id %></br>
-Currently in Office?: <%= legislator.in_office %></br>
-votesmart Id: <%= legislator.votesmart_id %>
+<p><% @politicians.each do |politician| %></p>
+Name: <%= politician.firstname %> <%= politician.lastname %></br>
+
 <% end %>
+
+
+<form action='/favorites' method="post">
+  <input value= "<%= politician.votesmart_id %>>" name="votesmart_id" type="hidden">
+  <button>Favorites</button>
+</form>
 
 
 
