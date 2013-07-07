@@ -42,3 +42,15 @@ p, form {
   color: white;
   border-radius: 50%;
 }
+
+.republican {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+}
+
+.independent {
+  background-color: purple;
+  color: white;
+  border-radius: 50%;
+}

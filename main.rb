@@ -1,5 +1,5 @@
 ########################################
-# Set up
+# LOAD REQUIRED GEMS AND FILES
 ########################################
 require 'pry'
 require 'sinatra'
@@ -11,7 +11,7 @@ require 'sunlight'
 Sunlight::Base.api_key = '035fbbb591aa4fdba299e64c0d9e867c'
 
 ########################################
-# Method Definition
+# METHOD DEFINITION
 ########################################
 
 def sunlight_by_zip(zipcode)
@@ -21,7 +21,16 @@ end
 
 
 ########################################
-#
+# CONNECT TO DATABASE VIA ACTIVERECORD
+########################################
+set :database, {
+  adapter: 'postgresql',
+  database: 'sunlight_hw',
+  host: 'localhost'
+}
+
+########################################
+# CONNECT TO DATABASE VIA AR
 ########################################
 
 get '/' do
