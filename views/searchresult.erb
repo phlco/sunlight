@@ -1,0 +1,18 @@
+<h1>Here's a search result</h1>
+<p>You can save as your favorite by clicking the button below</p>
+
+
+<form action="/savefav" method="POST">
+<% @search_result.each do |person| %>
+  <p>
+    <input type="radio" name="bioguide_id" value="<%= person.bioguide_id %>">
+    <%= person.firstname %> <%= person.lastname %>
+    <span class="
+      <%= if person.party == "D"; "democratic"; elsif person.party == "R"; "republican"; else; "independent"; end %>">
+      (<%= person.party %>)
+    </span>
+  </p>
+<% end %>
+<button>Save as Favorite</button>
+</form>
+

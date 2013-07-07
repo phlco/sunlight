@@ -1,0 +1,36 @@
+
+<div class="bigbox">
+<div class="headline">Search Your Legislators Here</div>
+
+<br>
+<div class="searchbox">
+Enter your zipcode here
+  <form action="/result" method="get">
+    <input name="zip_input" type="string" placeholder="Zipcode here" align="center">
+    <button>Submit</button>
+  </form>
+</div>
+</div>
+
+<div class="favlist">
+<p>Here are your favorite legislators:</p>
+
+<% if @FavLegislators.size == 0 %>
+  <ul><li>You currently don't have any saved favorite legislators</li></ul>
+<% else %>
+  <% @FavLegislators.each do |favorite| %>
+    <ul>
+      <li><%= favorite[:firstname] %> <%= favorite[:lastname] %></li>
+      <ul>
+        <li>Party: <%= favorite[:party] %></li>
+        <li>Phone: <%= favorite[:firstname] %></li>
+        <li>Twitter: <%= favorite[:twitter_id] %></li>
+        <li>In office? <%= favorite[:in_office] %></li>
+        <li>Votesmart ID: <%= favorite[:votesmart_id] %></li>
+      </ul>
+    </ul>
+  <% end %>
+<% end %>
+</div>
+
+

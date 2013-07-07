@@ -1,0 +1,60 @@
+.bigbox {
+  margin: 50px auto;
+  width: 1250px;
+  height: 2000x;
+  border: 3px solid lightgrey;
+}
+
+.headline {
+  font-family: sans-serif;
+  font-size: 80px;
+  color: #01C2E6;
+  margin: 20px;
+  text-align: center;
+}
+
+.searchbox {
+  margin: 20px auto 100px auto;
+  width: 320px;
+  height: 50px;
+  font-family: sans-serif;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  border: 1px dashed lightgrey;
+  padding: 30px;
+  background-color: white;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 23px;
+  margin: 20px;
+  color: #01C2E6;
+}
+
+p, form {
+  margin: 20px;
+}
+
+.democratic {
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+}
+
+.republican {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+}
+
+.independent {
+  background-color: purple;
+  color: white;
+  border-radius: 50%;
+}
+
+.favlist {
+  margin: 20px;
+}
