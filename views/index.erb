@@ -11,4 +11,11 @@
 <h2>Favorites:</h2>
 <% @fav_legislators.each do |favorite| %>
 <h3><%= favorite.firstname  %> <%= favorite.lastname  %></h3>
-<% end %>
+<ul>
+    <li> Phone:        <%= favorite.phone %></li>
+    <li> Party:          <%= favorite.party %></li>
+    <li> State:          <%= favorite.state %></li>
+    <li> Twitter:       <%= favorite.twitter_id %></li>
+    <li> In Office?:    <%= favorite.in_office %></li>
+  </ul>
+  <% end %>
