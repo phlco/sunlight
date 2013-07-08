@@ -13,3 +13,13 @@ set :database, {
   database: 'legislators_app',
   host: 'localhost'
 }
+
+class Legislator < ActiveRecord::Base
+
+end
+
+get '/' do
+  @favorite_legislators = Legislators.all
+  erb :index
+end
+
