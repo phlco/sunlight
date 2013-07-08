@@ -8,4 +8,8 @@
     <li> State:  <%= legislator.state %></li>
     <li> Twitter: <%= legislator.twitter_id %></li>
   </ul>
+ <form action="/" method="post">
+    <input type="hidden" name="votesmart_id" value="<%= legislator.votesmart_id %>">
+    <button>Fav Legislator</button>
+  </form>
   <% end %>
