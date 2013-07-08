@@ -1,0 +1,21 @@
+
+<h1>Find a Local Politcian</h1>
+
+
+<form action="/legislator" method="get">
+  <label for="zipcode">Enter a Zipcode</label>
+  <input type="text" name="zipcode" autofocus>
+  <button>Search</button>
+</form>
+
+<h2>Favorites:</h2>
+<% @fav_legislators.each do |favorite| %>
+<h3><%= favorite.firstname  %> <%= favorite.lastname  %></h3>
+<ul>
+    <li> Phone:        <%= favorite.phone %></li>
+    <li> Party:          <%= favorite.party %></li>
+    <li> State:          <%= favorite.state %></li>
+    <li> Twitter:       <%= favorite.twitter_id %></li>
+    <li> In Office?:    <%= favorite.in_office %></li>
+  </ul>
+  <% end %>
