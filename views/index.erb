@@ -6,11 +6,17 @@
 <h1>Lovin' Legislation</h1>
 
 <h3>Store the names and information of your favorite legislators.</h3>
-  <%=@favorite_legislators%>
+<% @favorite_legislators.each do |fave| %>
+  <p><%= fave.firstname %> <%= fave.lastname %><p>
+<% end %>
 
 
 <h3>Search for more of your favorite legislators by zip code here.</h3>
-<form action="/..." method="POST">
+
+<form action="/legislators" method="GET">
 <input type="text" placeholder="enter zipcode" name="zipcode">
 <button>Search</button>
+</form>
+
+
 

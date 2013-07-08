@@ -23,3 +23,10 @@ get '/' do
   erb :index
 end
 
+get '/legislators' do
+  zipcode = params[:zipcode]
+  @legislators = Sunlight::Legislator.all_in_zipcode(zipcode)
+  erb :legislators
+end
+
+
