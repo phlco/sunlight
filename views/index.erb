@@ -8,3 +8,7 @@
   <button>Search</button>
 </form>
 
+<h2>Favorites:</h2>
+<% @fav_legislators.each do |favorite| %>
+<h3><%= favorite.firstname  %> <%= favorite.lastname  %></h3>
+<% end %>
