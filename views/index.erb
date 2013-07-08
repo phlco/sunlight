@@ -1,0 +1,13 @@
+<form action="/politicians" method="get">
+<input type="text" name="zip">
+
+<button> Submit </button>
+
+</form>
+
+<% @favorites.each do |favorite| %>
+<p class='politician'>
+  <span class='<%= favorite.party == 'D' ? 'democrat' : (favorite.party == 'R' ? 'republican' : 'independent') %>'><%= favorite.party %></span>
+  <span><%= favorite.firstname %> <%=favorite.lastname%></span>
+</p>
+<% end %>

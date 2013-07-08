@@ -1,0 +1,16 @@
+.politician {
+  padding: 5px 3px;
+}
+
+.democrat, .D, .republican, .R, .independent, .I {
+  padding-left: 5px;
+  padding-right: 7px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.democrat, .D {background-color: blue}
+
+.republican, .R {background-color: red}
+
+.independent, .I {background-color: purple}
