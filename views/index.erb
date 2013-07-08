@@ -6,5 +6,8 @@
 </form>
 
 <% @favorites.each do |favorite| %>
-  <%= favorite.firstname %> <%=favorite.lastname%>
+<p class='politician'>
+  <span class='<%= favorite.party == 'D' ? 'democrat' : (favorite.party == 'R' ? 'republican' : 'independent') %>'><%= favorite.party %></span>
+  <span><%= favorite.firstname %> <%=favorite.lastname%></span>
+</p>
 <% end %>
