@@ -7,13 +7,16 @@
 		<% elsif party == "D" %>
 			<% coloring = 'blue' %>
 		<% end %> 
-		<%=legislator.phone%>
 		<h3 style = "color: <%=coloring%>">
 			<%=legislator.firstname%> <%=legislator.lastname%>
 		</h3>
+		<p><%=legislator.phone%></p>
+
 		<form action = '/favorite' method = 'post'>
 			<input value =  "<%=legislator.phone%>" name = "phone" type = "hidden">
 			<button> Favorite </button>
 		</form>
 	<%end%>
 </ul>
+
+<a href = '/'>Home</a>

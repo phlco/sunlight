@@ -49,7 +49,7 @@ post '/favorite' do
 		in_office: l.in_office, 
 		votesmart_id: l.votesmart_id)
 	end
-	redirect to('/index')
+	redirect to('/')
 end
 
 get '/legislators/:id' do
