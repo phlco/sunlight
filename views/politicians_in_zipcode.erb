@@ -1,0 +1,27 @@
+<div class="politicians">
+  <h1>Politicians in <span><%="#{params[:zipcode]}"%></span>:</h1>
+
+  <%@politicians.each do |person|%>
+    <%party = person.party%>
+
+    <%color = '#9A2EFE'%>
+      <% if party == "D" %>
+        <% color = '#2E64FE' %>
+      <% elsif party == "R" %>
+        <% color = '#FE2E2E' %>
+
+    <% end %>
+
+    <h3 style = "color: <%=color%>">
+    <%=person.firstname%> <%=person.lastname%>
+    <p> @<%= person.twitter_id %> | <%= person.state %> | <%= person.phone %> </p>
+    </h3>
+
+    <form action = '/like' method = 'post'>
+      <input type = "hidden" name = "votesmart_id" value="<%= person.votesmart_id%>">
+      <button> Like </button>
+    </form>
+
+    <%end%>
+
+</div>

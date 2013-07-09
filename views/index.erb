@@ -1,0 +1,18 @@
+<div class="search_container">
+  <h1>Find Politicians</h1>
+
+  <h4 span style="color: #393b39"> Enter ZipCode: </h4>
+
+  <form action ="/" method ="post">
+      <input type ="int" name ="zipcode" autofocus>
+   </br>
+
+  <button>Search</button>
+  </form>
+</div>
+
+<h1>Liked:</h1>
+<% @politicians.each do |politician| %>
+<%= politician.firstname %> <%= politician.lastname %>
+  <li><%= politician.party %> | <a href="http://twitter.com/<%= politician.twitter_id%>">@<%= politician.twitter_id %></a> | In Office? <%= politician.in_office %> | ID: <%= politician.votesmart_id %></li>
+<% end %>

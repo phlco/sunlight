@@ -1,0 +1,76 @@
+@import url(http://fonts.googleapis.com/css?family=Average);
+@import url(http://fonts.googleapis.com/css?family=Alike);
+
+body {
+  margin: 0 auto;
+  background-color: #F2F2F2;
+  font-family: "Average";
+  color: #151515;
+  text-align: center;
+}
+p {
+  color: black;
+  font-size: 12px;
+  text-decoration: overline;
+}
+li {
+  font-size: 15px;
+  text-decoration: none;
+  color: #585858;
+  list-style-type: none;
+}
+span {
+  color: #610B0B;
+  font-size: 40px;
+}
+a {
+  text-decoration: none;
+  color: #0B3B39;
+}
+a:hover {
+  text-align: center;
+}
+a:hover.Home {
+  color: #FE2E2E;
+}
+h1 {
+  color: black;
+  text-align: center;
+  letter-spacing: 2.0px;
+  line-height: 125%;
+}
+h3 {
+  font-family: "Alike";
+  color: inherit;
+  line-height: 80%;
+}
+.Home {
+  line-height: 100px;
+  text-decoration: none;
+  text-align: center;
+  color: #FA5858;
+  font-size: 20px;
+}
+.search_container {
+  text-align: center;
+  display: block;
+  margin: 50px 350px 0 350px;
+  padding: 10px;
+  font-family: "Average";
+  font-size: 30px;
+  letter-spacing: 2px;
+  box-shadow: 0 3px 8px #888888;
+  border-radius: 10px;
+  background-color:rgba(255,255,255,255);
+}
+.politicians {
+  text-align: center;
+  display: block;
+  margin: 50px 350px 0 350px;
+  padding: 10px;
+  font-family: "Average";
+  font-size: 20px;
+  box-shadow: 0 3px 8px #888888;
+  border-radius: 10px;
+  background-color:rgba(255,255,255,255);
+}
