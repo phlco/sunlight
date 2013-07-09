@@ -1,5 +1,5 @@
 <ul>
-  <% @result_legislators.each do |legislator| %>
+  <% @legislators.each do |legislator| %>
     <% li_class = 'republican' if legislator.party == "R" %>
     <% li_class = 'democrat' if legislator.party == "D" %>
     <% li_class = 'independent' if legislator.party == "I" %>
@@ -12,10 +12,6 @@
       <% end %>
       <%= "#{legislator.party}-#{legislator.state}" %><br>
       <%= "#{legislator.phone} | @#{legislator.twitter_id}" %>
-      <form action="/fav_legislator/<%= legislator.votesmart_id %>" method="post">
-        <input type="hidden" value="<%= legislator.votesmart_id  %>" name="votesmart_id" />
-        <button>Favorite</button>
-      </form>
     </li>
   <% end %>
 </ul>

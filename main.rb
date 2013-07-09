@@ -30,3 +30,16 @@ post '/legislator_search' do
   @result_legislators = Sunlight::Legislator.all_in_zipcode("#{params[:zip]}")
   erb :legislator_search
 end
+
+post '/fav_legislator/:id' do
+  legislator = Sunlight::Legislator.all_where(:votesmart_id => params[:id]).first
+  Legislator.create(firstname: legislator.firstname, lastname: legislator.lastname, in_office: legislator.in_office, party: legislator.party, state: legislator.state, phone: legislator.phone, twitter_id: legislator.twitter_id)
+
+  redirect to('/')
+end
+
+get '/fav_legislators' do
+  @legislators = Legislator.all
+
+  erb :fav_legislators
+end
