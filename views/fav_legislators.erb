@@ -1,0 +1,17 @@
+<ul>
+  <% @legislators.each do |legislator| %>
+    <% li_class = 'republican' if legislator.party == "R" %>
+    <% li_class = 'democrat' if legislator.party == "D" %>
+    <% li_class = 'independent' if legislator.party == "I" %>
+    <li class="<%= li_class %>">
+      <%= "#{legislator.firstname} #{legislator.lastname}" %><br>
+      <% if legislator.in_office == true %>
+        In office<br>
+      <% else %>
+        Not in office<br>
+      <% end %>
+      <%= "#{legislator.party}-#{legislator.state}" %><br>
+      <%= "#{legislator.phone} | @#{legislator.twitter_id}" %>
+    </li>
+  <% end %>
+</ul>
